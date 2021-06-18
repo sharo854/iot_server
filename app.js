@@ -27,51 +27,16 @@ app.get('/', (req, res) => {
 	);
 });
 
-app.post('/change1', (req, res) => {
-	console.log('change');	
-	connection.query(
-		'update attendance set state=1;',
-		(error, results) => {
-			console.log(results);
-			res.redirect('/');
-		}
-	);
-});
-app.post('/change2', (req, res) => {
-	console.log('change');	
-	connection.query(
-		'update attendance set state=2;',
-		(error, results) => {
-			console.log(results);
-			res.redirect('/');
-		}
-	);
-});
-app.post('/change3', (req, res) => {
-	console.log('change');	
-	connection.query(
-		'update attendance set state=3;',
-		(error, results) => {
-			console.log(results);
-			res.redirect('/');
-		}
-	);
-});
 app.post('/change/:id', (req, res) => {
 	console.log('change');	
 	connection.query(
 		'update attendance set state=?;',
 		[req.params.id],
 		(error, results) => {
-			console.log(results);
+			// console.log(results);
 			res.redirect('/');
 		}
 	);
-});
-
-
-app.get('/top', (req, res) => {
-	res.render('top.ejs');
 });
 
 var server = app.listen(3002, () => {
