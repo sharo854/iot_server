@@ -43,6 +43,7 @@ app.get('/api/v1/test', (req, res) => {
 	console.log('test');
 	res.writeHead(200, {'Content-Type': 'text/plain'});
 	res.write("これはテストページです。");
+	res.end();
 });
 
 app.get('/api/v1/state', (req, res) => {
