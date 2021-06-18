@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Attendance</title>
+</head>
+<body>
+	<%var names = ["Office", "Home", "Unknown"];%>
+	<h1><%= item.state %></h1>
+    <h1>Hello World</h1>
+
+	<% var nextstate = item.state+1;
+		if(nextstate>3) {
+			nextstate = 1;
+		}
+	%>
+    <form action="/change/<%=  nextstate %>" method="post">
+    <input type="submit" value="<%= names[item.state-1] %>" /><br />
+	</form>
+</body>
+</html>
