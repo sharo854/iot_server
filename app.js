@@ -39,6 +39,23 @@ app.post('/change/:id', (req, res) => {
 	);
 });
 
+app.get('/api/v1/test', (req, res) => {
+	console.log('test');	
+	res.write("これはテストページです。");
+});
+
+app.get('/api/v1/state', (req, res) => {
+	console.log('change');	
+	connection.query(
+		'update attendance set state=?;',
+		[req.params.id],
+		(error, results) => {
+			// console.log(results);
+			res.redirect('/');
+		}
+	);
+});
+
 var server = app.listen(3002, () => {
 	console.log('Example app listening on port ' + server.address().port)
 });
