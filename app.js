@@ -41,7 +41,7 @@ app.post('/change/:id', (req, res) => {
 
 app.get('/api/v1/test', (req, res) => {
 	console.log('test');
-	res.writeHead(200, {'Content-Type': 'text/plain'});
+	res.writeHead(200, {'Content-Type': 'text/plain;charset=utf-8;'});
 	res.write("これはテストページです。");
 	res.end();
 });
