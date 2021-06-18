@@ -74,6 +74,6 @@ app.get('/top', (req, res) => {
 	res.render('top.ejs');
 });
 
-var server = app.listen(3001, () => {
+var server = app.listen(3002, () => {
 	console.log('Example app listening on port ' + server.address().port)
 });
