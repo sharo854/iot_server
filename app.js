@@ -52,9 +52,7 @@ app.get('/api/v1/state', (req, res) => {
 		'SELECT state FROM attendance',
 		(error, results) => {
 			console.log(results);
-			res.writeHead(200, {'Content-Type': 'text/plain;charset=utf-8;'});
-			res.write("{state:" + results[0] + "}");
-			res.end();
+			res.render('stateapi.ejs', {item: results[0]});
 		}
 	);
 });
