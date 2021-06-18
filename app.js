@@ -47,13 +47,14 @@ app.get('/api/v1/test', (req, res) => {
 });
 
 app.get('/api/v1/state', (req, res) => {
-	console.log('change');	
+	console.log('api/state');	
 	connection.query(
-		'update attendance set state=?;',
-		[req.params.id],
+		'SELECT state FROM attendance',
 		(error, results) => {
-			// console.log(results);
-			res.redirect('/');
+			console.log(results);
+			res.json({
+				state:1
+			});
 		}
 	);
 });
