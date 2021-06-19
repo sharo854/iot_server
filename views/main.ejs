@@ -2,30 +2,40 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>出社状況</title>
+		<title>IoT管理</title>
 		<link rel="stylesheet" href="/css/style.css">
 	</head>
 	<body>
 		<header>
 			<div class="container">
-				<p>Attendance</p>
+				<div class="header-center">
+					<p>IoT管理画面</p>
+				</div>
 			</div>
 		</header>
-		<%var names = ["Office", "Home", "Unknown"];%>
-		<div class="info-wrapper">
-			<div class="container">
 
-			</div>
-		</div>
-		<h1><%= item.state %></h1>
-			<h1>Hello World</h1>
-
-		<% var nextstate = item.state+1;
+		<% 
+			var names = ["Office", "Home", "Unknown"];
+			var nextstate = item.state+1;
 			if(nextstate>2) {
 				nextstate = 1;
 			}
 		%>
-			<form action="/change/<%=  nextstate %>" method="post">
+
+		<ul class="state-wrapper">
+			<% items.forEach((item) => { %>
+				<li>
+					<p><%= item.user %></p>
+					<form action="/change/<%=  nextstate %>" method="post">
+						<input type="submit" value="<%= names[item.state-1] %>" /><br />
+					</form>
+				</li>
+			<% }) %>
+		</ul>
+		<!-- <h1><%= item.state %></h1>
+			<h1>Hello World</h1> -->
+
+		<form action="/change/<%=  nextstate %>" method="post">
 			<input type="submit" value="<%= names[item.state-1] %>" /><br />
 		</form>
 	</body>

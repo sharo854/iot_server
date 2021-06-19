@@ -21,10 +21,10 @@ connection.connect((err) => {
 
 app.get('/', (req, res) => {
 	connection.query(
-		'SELECT state FROM attendance',
+		'SELECT * FROM attendance',
 		(error, results) => {
 			console.log(results);
-			res.render('main.ejs', {item: results[0]});
+			res.render('main.ejs', {items: results});
 		}
 	);
 });
