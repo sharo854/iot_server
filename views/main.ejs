@@ -28,9 +28,13 @@
 						<li>
 							<span><%= item.user %></span>
 							<form action="/change/<%= item.user %>/<%= nextstate %>" method="post" class="inline-block">
-								<input type="submit" value="<%= names[item.state-1] %>" 
-												class="button <%= color_class[item.state-1] %> "/>
+								<!-- <input type="submit" value="<%= names[item.state-1] %>" 
+												class="button <%= color_class[item.state-1] %> "/> -->
+								<input type="hidden" name="user_name" value="名前">
+    						<a href="javascript:form1.submit()" class="button <%= color_class[item.state-1] %> "><%= names[item.state-1] %></a>
 							</form>
+
+
 						</li>
 					<% }) %>
 				</ul>
