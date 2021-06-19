@@ -16,3 +16,9 @@ header {
 	background-color: #e20d0d;
 	border-bottom: 1px solid #2473d3;
 }
+
+.container {
+	width: 900px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
