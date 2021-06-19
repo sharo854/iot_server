@@ -31,10 +31,10 @@
 								<!-- <input type="submit" value="<%= names[item.state-1] %>" 
 												class="button <%= color_class[item.state-1] %> "/> -->
 								<input type="hidden" name="user_name" value="名前">
-    						<a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state-1] %> "><%= names[item.state-1] %></a>
+								<div>
+									<a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state-1] %> "><%= names[item.state-1] %></a>
+								</div>
 							</form>
-
-
 						</li>
 					<% }) %>
 				</ul>
