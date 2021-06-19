@@ -7,33 +7,30 @@
 	</head>
 	<body>
 		<header>
-			<div class="container">
-				<div class="header-center">
-					IoT管理画面
-				</div>
+			<div class="header-center">
+				IoT管理画面
 			</div>
 		</header>
 
 		<% var names = ["Office", "Home", "Unknown"]; %>
 		
-
-		<ul class="state-wrapper">
-			<% items.forEach((item) => { %>
-				<% 
-					var nextstate = item.state+1;
-					if(nextstate>2) {
-						nextstate = 1;
-					}
-				%>
-				<li>
-					<span><%= item.user %></span>
-					<span>
-						<form action="/change/<%= nextstate %>" method="post">
+		<div class="container">
+			<ul class="state-wrapper">
+				<% items.forEach((item) => { %>
+					<% 
+						var nextstate = item.state+1;
+						if(nextstate>2) {
+							nextstate = 1;
+						}
+					%>
+					<li>
+						<span><%= item.user %></span>
+						<form action="/change/<%= nextstate %>" method="post" class="inline-form">
 							<input type="submit" value="<%= names[item.state-1] %>" /><br />
 						</form>
-					</span>
-				</li>
-			<% }) %>
-		</ul>
+					</li>
+				<% }) %>
+			</ul>
+		</div>
 	</body>
 </html>
