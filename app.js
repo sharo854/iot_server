@@ -1,5 +1,6 @@
 const express = require('express')
 const mysql = require('mysql');
+const cron = require('node-cron');
 const app = express()
 
 app.use(express.static('public'))
@@ -18,6 +19,16 @@ connection.connect((err) => {
   }
   console.log('success');
 });
+
+cron.schedule('0 46 21 * * *', () => {
+	connection.query(
+		'update attendance set state=3;',
+		(error, results) => {
+			console.log("リセット");
+		}
+	);
+});
+
 
 app.get('/', (req, res) => {
 	connection.query(
@@ -62,3 +73,5 @@ app.get('/api/v1/state', (req, res) => {
 var server = app.listen(3002, () => {
 	console.log('Example app listening on port ' + server.address().port)
 });
+
+
