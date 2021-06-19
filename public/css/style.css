@@ -47,8 +47,11 @@ ul, li {
 	margin: 0 auto;
 }
 
-.button {
+.inline-block {
 	display       : inline-block;
+}
+.button {
+	/* display       : inline-block; */
 	border-radius : 7%;          /* 角丸       */
 	font-size     : 18pt;        /* 文字サイズ */
 	text-align    : center;      /* 文字位置   */
