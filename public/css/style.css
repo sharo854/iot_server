@@ -55,6 +55,7 @@ ul, li {
 	/* display       : inline-block; */
 	border-radius : 7%;          /* 角丸       */
 	font-size     : 18pt;        /* 文字サイズ */
+	font-weight	:bold;
 	text-align    : center;      /* 文字位置   */
 	cursor        : pointer;     /* カーソル   */
 	padding       : 18px 30px;   /* 余白       */
@@ -72,13 +73,13 @@ ul, li {
 	background    : #ffffff;     /* 背景色    */
   }
   .button-office {
-	  background    : #cc653c;     /* 背景色     */
+	  background    : #d63d00;     /* 背景色     */
   }
   .button-home {
-	  background    : #69d68a;     /* 背景色     */
+	  background    : #00cc3d;     /* 背景色     */
   }
   .button-unknown {
-	  background    : #a3a3a3;     /* 背景色     */
+	  background    : #353535;     /* 背景色     */
   }
 
   li {
