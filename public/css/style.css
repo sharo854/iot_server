@@ -62,10 +62,15 @@ ul, li {
 	line-height   : 1em;         /* 1行の高さ  */
 	box-shadow    : 8px 8px 20px #666666;  /* 影の設定 */
 	border        : 2px solid #000066;    /* 枠の指定 */
+	margin		: 0 10pt;
   }
   .button:hover {
 	transition    : .3s;         /* なめらか変化 */
 	box-shadow    : none;        /* カーソル時の影消去 */
 	color         : #000066;     /* 背景色     */
 	background    : #ffffff;     /* 文字色     */
+  }
+
+  li {
+	  padding	: 10px 0;
   }
