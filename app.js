@@ -20,7 +20,7 @@ connection.connect((err) => {
   console.log('success');
 });
 
-cron.schedule('0 46 21 * * *', () => {
+cron.schedule('0 51 21 * * *', () => {
 	connection.query(
 		'update attendance set state=3;',
 		(error, results) => {
