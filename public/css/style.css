@@ -16,7 +16,7 @@ body {
 }
 
 header {
-	height: 56px;
+	/* height: 56px; */
 	background-color: #8bcf6b;
 	/* border-bottom: 1px solid #2473d3; */
 }
