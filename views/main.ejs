@@ -18,13 +18,13 @@
 					<% items.forEach((item) => { %>
 						<% 
 							var nextstate = item.state+1;
-							if(nextstate>2) {
+							if(nextstate>3) {
 								nextstate = 1;
 							}
 						%>
 						<li>
 							<span><%= item.user %></span>
-							<form action="/change/<%= nextstate %>" method="post" class="inline-block">
+							<form action="/change/<%= item.user %>/<%= nextstate %>" method="post" class="inline-block">
 								<input type="submit" value="<%= names[item.state-1] %>" class="button"/>
 							</form>
 						</li>

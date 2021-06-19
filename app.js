@@ -29,11 +29,11 @@ app.get('/', (req, res) => {
 	);
 });
 
-app.post('/change/:id', (req, res) => {
+app.post('/change/:user/:id', (req, res) => {
 	console.log('change');	
 	connection.query(
-		'update attendance set state=?;',
-		[req.params.id],
+		'update attendance set state=? where user=?;',
+		[req.params.id, req.params.user],
 		(error, results) => {
 			// console.log(results);
 			res.redirect('/');
