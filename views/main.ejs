@@ -11,6 +11,7 @@
 		</header>
 
 		<% var names = ["出社", "在宅", "不明"]; %>
+		<% var color_class = ["button-office", "button-home", "button-unknown"]; %>
 		
 		<div class="state-wrapper">
 			<div class="container">
@@ -25,7 +26,8 @@
 						<li>
 							<span><%= item.user %></span>
 							<form action="/change/<%= item.user %>/<%= nextstate %>" method="post" class="inline-block">
-								<input type="submit" value="<%= names[item.state-1] %>" class="button"/>
+								<input type="submit" value="<%= names[item.state-1] %>" 
+												class="button <%= color_class[item.state-1] %> "/>
 							</form>
 						</li>
 					<% }) %>
