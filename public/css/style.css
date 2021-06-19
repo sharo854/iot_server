@@ -58,7 +58,7 @@ ul, li {
 	text-align    : center;      /* 文字位置   */
 	cursor        : pointer;     /* カーソル   */
 	padding       : 18px 30px;   /* 余白       */
-	background    : #000066;     /* 背景色     */
+	/* background    : #000066;     背景色     */
 	color         : #ffffff;     /* 文字色     */
 	line-height   : 1em;         /* 1行の高さ  */
 	box-shadow    : 8px 8px 20px #666666;  /* 影の設定 */
