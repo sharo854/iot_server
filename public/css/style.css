@@ -2,6 +2,15 @@
 	box-sizing: border-box;
 }
 
+a {
+	text-decoration: none;
+}
+
+body {
+	margin: 0;
+	font-family: "Hiragino Kaku Gothic ProN";
+}
+
 header {
 	height: 56px;
 	background-color: #e20d0d;
