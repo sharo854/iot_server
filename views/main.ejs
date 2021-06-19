@@ -32,8 +32,6 @@
 				</li>
 			<% }) %>
 		</ul>
-		<!-- <h1><%= item.state %></h1>
-			<h1>Hello World</h1> -->
 
 		<form action="/change/<%=  nextstate %>" method="post">
 			<input type="submit" value="<%= names[item.state-1] %>" /><br />
