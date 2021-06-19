@@ -50,7 +50,6 @@ ul, li {
 
 .inline-block {
 	display       : inline-block;
-	margin		: 5pt 10pt;
 }
 .button {
 	/* display       : inline-block; */
@@ -65,6 +64,7 @@ ul, li {
 	line-height   : 1em;         /* 1行の高さ  */
 	box-shadow    : 8px 8px 20px #666666;  /* 影の設定 */
 	border        : 2px solid #000000;    /* 枠の指定 */
+	margin		: 5pt 10pt;
   }
   .button:hover {
 	transition    : .3s;         /* なめらか変化 */
