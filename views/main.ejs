@@ -26,15 +26,15 @@
 			<% items.forEach((item) => { %>
 				<li>
 					<p><%= item.user %></p>
-					<form action="/change/<%=  nextstate %>" method="post">
-						<input type="submit" value="<%= names[item.state-1] %>" /><br />
+					<form action="/change/<%= nextstate %>" method="post">
+						<input type="submit" value="<%= names[items.state-1] %>" /><br />
 					</form>
 				</li>
 			<% }) %>
 		</ul>
 
 		<form action="/change/<%=  nextstate %>" method="post">
-			<input type="submit" value="<%= names[item.state-1] %>" /><br />
+			<input type="submit" value="<%= names[items.state-1] %>" /><br />
 		</form>
 	</body>
 </html>
