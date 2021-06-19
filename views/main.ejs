@@ -9,7 +9,7 @@
 		<header>
 			<div class="container">
 				<div class="header-center">
-					<p>IoT管理画面</p>
+					IoT管理画面
 				</div>
 			</div>
 		</header>
@@ -26,10 +26,12 @@
 					}
 				%>
 				<li>
-					<p><%= item.user %></p>
-					<form action="/change/<%= nextstate %>" method="post">
-						<input type="submit" value="<%= names[item.state-1] %>" /><br />
-					</form>
+					<span><%= item.user %></span>
+					<span>
+						<form action="/change/<%= nextstate %>" method="post">
+							<input type="submit" value="<%= names[item.state-1] %>" /><br />
+						</form>
+					</span>
 				</li>
 			<% }) %>
 		</ul>
