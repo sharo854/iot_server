@@ -18,7 +18,7 @@
 		<div class="state-wrapper">
 			<div class="container">
 				<ul>
-					<% items.forEach((item) => { %>
+					<% items.forEach((item, index) => { %>
 						<% 
 							var nextstate = item.state+1;
 							if(nextstate>3) {
@@ -31,7 +31,7 @@
 								<!-- <input type="submit" value="<%= names[item.state-1] %>" 
 												class="button <%= color_class[item.state-1] %> "/> -->
 								<input type="hidden" name="user_name" value="名前">
-    						<a href="javascript:form1.submit()" class="button <%= color_class[item.state-1] %> "><%= names[item.state-1] %></a>
+    						<a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state-1] %> "><%= names[item.state-1] %></a>
 							</form>
 
 
