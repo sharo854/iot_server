@@ -69,7 +69,7 @@ ul, li {
 	transition    : .3s;         /* なめらか変化 */
 	box-shadow    : none;        /* カーソル時の影消去 */
 	color         : #ffffff;     /* 背景色     */
-	background    : #ffffff;     /* 文字色     */
+	background    : #123044;     /* 文字色     */
   }
   .button-office {
 	  background    : #cc653c;     /* 背景色     */
