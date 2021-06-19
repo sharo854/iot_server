@@ -64,7 +64,7 @@ ul, li {
 	line-height   : 1em;         /* 1行の高さ  */
 	box-shadow    : 8px 8px 20px #666666;  /* 影の設定 */
 	border        : 2px solid #000000;    /* 枠の指定 */
-	margin		: 0 10pt;
+	margin		: 5pt 10pt;
   }
   .button:hover {
 	transition    : .3s;         /* なめらか変化 */
@@ -73,13 +73,13 @@ ul, li {
 	background    : #ffffff;     /* 背景色    */
   }
   .button-office {
-	  background    : #d63d00;     /* 背景色     */
+	  background    : #da9377;     /* 背景色     */
   }
   .button-home {
-	  background    : #00cc3d;     /* 背景色     */
+	  background    : #7cc793;     /* 背景色     */
   }
   .button-unknown {
-	  background    : #353535;     /* 背景色     */
+	  background    : #7c7c7c;     /* 背景色     */
   }
 
   li {
