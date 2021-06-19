@@ -7,7 +7,7 @@ var cov = {Mon:"月", Tue:"火", Wed:"水", Tur:"木", Fri:"金", Sat:"土", Sun
 require('date-utils'); 
 var dt = new Date();
 dt.setHours(dt.getHours() + 6)
-var timestring = dt.toFormat("M/D ") + cov[dt.toFormat("DDD")] + "の予定";
+var timestring = dt.toFormat("M/D (") + cov[dt.toFormat("DDD")] + ") の予定";
 
 app.use(express.static('public'))
 
