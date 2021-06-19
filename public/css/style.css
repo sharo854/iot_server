@@ -2,6 +2,10 @@
 	box-sizing: border-box;
 }
 
+a {
+	text-decoration: none;
+}
+
 html {
 	font-size: 300%;
 	font-family: 'Hiragino Sans', sans-serif;
@@ -17,9 +21,13 @@ body {
 
 header {
 	/* height: 56px; */
-	padding: 15px 25px;
-	background-color: #8bcf6b;
+	padding: 15px;
+	background-color: #7bc6e4;
 	/* border-bottom: 1px solid #2473d3; */
+}
+
+.header_logo {
+	padding: 5px;
 }
 
 ul, li {
