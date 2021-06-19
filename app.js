@@ -3,6 +3,10 @@ const mysql = require('mysql');
 const cron = require('node-cron');
 const app = express()
 
+require('date-utils'); 
+var dt = new Date();
+var timestring = dt.toFormat("M/D (DDD) の予定")
+
 app.use(express.static('public'))
 
 const connection = mysql.createConnection({
@@ -35,7 +39,7 @@ app.get('/', (req, res) => {
 		'SELECT * FROM attendance',
 		(error, results) => {
 			console.log(results);
-			res.render('main.ejs', {items: results});
+			res.render('main.ejs', {items: results, timestr: timestring});
 		}
 	);
 });
