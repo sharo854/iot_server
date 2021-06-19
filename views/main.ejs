@@ -11,12 +11,15 @@
 		<header>
 			<a href="/" class="header-logo">IoT管理画面</a>
 		</header>
+		<% require('date-utils'); 
+		var dt = new Date();%>
 
 		<% var names = ["出社", "在宅", "不明"]; %>
 		<% var color_class = ["button-office", "button-home", "button-unknown"]; %>
 		
 		<div class="state-wrapper">
 			<div class="container">
+				<p><%= dt.toFormat("M/D (DDD) の予定") %></p>
 				<ul>
 					<% items.forEach((item, index) => { %>
 						<% 
@@ -37,6 +40,7 @@
 						</li>
 					<% }) %>
 				</ul>
+				<p>18:00にリセットされます。</p>
 			</div>
 		</div>
 	</body>

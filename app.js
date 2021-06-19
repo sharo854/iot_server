@@ -62,7 +62,7 @@ app.get('/api/v1/test', (req, res) => {
 app.get('/api/v1/state', (req, res) => {
 	console.log('api/state');	
 	connection.query(
-		'SELECT state FROM attendance',
+		'SELECT state FROM attendance where user="てい"',
 		(error, results) => {
 			console.log(results);
 			res.render('stateapi.ejs', {item: results[0]});
