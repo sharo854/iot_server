@@ -76,18 +76,21 @@ ul, li {
   }
   .button-office:hover {
 	  background    : #cc653c;     /* 背景色     */
+	  transition    : .3s;         /* なめらか変化 */
   }
   .button-home {
 	  background    : #69d68a;     /* 背景色     */
   }
   .button-home:hover {
 	  background    : #69d68a;     /* 背景色     */
+	  transition    : .3s;         /* なめらか変化 */
   }
   .button-unknown {
 	  background    : #a3a3a3;     /* 背景色     */
   }
   .button-unknown:hover {
 	  background    : #a3a3a3;     /* 背景色     */
+	  transition    : .3s;         /* なめらか変化 */
   }
 
   li {
