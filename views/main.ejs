@@ -14,16 +14,17 @@
 			</div>
 		</header>
 
-		<% 
-			var names = ["Office", "Home", "Unknown"];
-			var nextstate = items.state+1;
-			if(nextstate>2) {
-				nextstate = 1;
-			}
-		%>
+		<% var names = ["Office", "Home", "Unknown"]; %>
+		
 
 		<ul class="state-wrapper">
 			<% items.forEach((item) => { %>
+				<% 
+					var nextstate = item.state+1;
+					if(nextstate>2) {
+						nextstate = 1;
+					}
+				%>
 				<li>
 					<p><%= item.user %></p>
 					<form action="/change/<%= nextstate %>" method="post">
@@ -32,9 +33,5 @@
 				</li>
 			<% }) %>
 		</ul>
-
-		<form action="/change/<%=  nextstate %>" method="post">
-			<input type="submit" value="<%= names[items.state-1] %>" /><br />
-		</form>
 	</body>
 </html>
