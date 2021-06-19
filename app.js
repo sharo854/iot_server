@@ -5,7 +5,7 @@ const app = express()
 
 require('date-utils'); 
 var dt = new Date();
-dt.setHours(t2.getHours() + 6)
+dt.setHours(dt.getHours() + 6)
 var timestring = dt.toFormat("M/D (DDD) の予定")
 
 app.use(express.static('public'))
