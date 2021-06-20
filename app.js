@@ -2,6 +2,8 @@ const express = require('express')
 const mysql = require('mysql');
 const cron = require('node-cron');
 const app = express()
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
 
 var cov = {Sun:7, Mon:1, Tue:2, Wed:3, Tur:4, Fri:5, Sat:6}
 var cov_kan = ["日", "月", "火", "水", "木", "金", "土", "日"]
@@ -24,6 +26,24 @@ connection.connect((err) => {
   console.log('success');
 });
 
+
+const sessionStore = new MySQLStore({
+    host: 'localhost',
+    user: 'root',
+    password: '108379',
+    database: 'charlotte'
+});
+
+
+app.use(
+	session({
+	  secret: 'my_secret_key',
+	  store: sessionStore,
+	  resave: false,
+	  saveUninitialized: false,
+	})
+  );
+
 cron.schedule('0 00 18 * * 1-5', () => {
 	connection.query(
 		'update attendance set state_work=0;',
@@ -32,6 +52,18 @@ cron.schedule('0 00 18 * * 1-5', () => {
 		}
 	);
 });
+
+
+
+app.use((req, res, next) => {
+	if (req.session.views) {
+		req.session.views++;
+	  } else {
+		req.session.views = 1;
+	  }
+	  console.log(req.session.views);
+	next();
+  });
 
 
 app.get('/', (req, res) => {
