@@ -12,10 +12,10 @@
 			<a href="/" class="header-logo">IoT管理画面</a>
 		</header>
 
-		<% var names = ["不明", "出社", "在宅", "勤務終了"]; %>
+		<% var names = ["不明", "出社", "在宅", "休暇"]; %>
 		<% var names_now = ["在室", "離室中", "睡眠中"]; %>
 		<% var cols = ["state_work", "state_now"]; %>
-		<% var color_class = ["button-office", "button-home", "button-unknown"]; %>
+		<% var color_class = ["button-unknown", "button-office", "button-home", "button-vac"]; %>
 		<% var color_class_now = ["button-room", "button-out", "button-sleep"]; %>
 		
 		<div class="state-wrapper">
@@ -25,7 +25,7 @@
 					<% items.forEach((item, index) => { %>
 						<% 
 						var nextstate = item.state_work+1;
-						if(nextstate>2) {
+						if(nextstate>3) {
 							nextstate = 0;
 						}
 						var nextstate_now = item.state_now+1;

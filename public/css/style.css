@@ -8,7 +8,7 @@ a {
 }
 
 html {
-	font-size: 20pt;
+	font-size: 15pt;
 	font-family: 'Hiragino Sans', sans-serif;
 	line-height: 1.7;
 	letter-spacing: 1px;
@@ -54,19 +54,18 @@ ul, li {
 .button {
 	display       : inline-block;
 	border-radius : 7%;          /* 角丸       */
-	font-size     : 18pt;        /* 文字サイズ */
 	font-weight	:bold;
 	text-align    : center;      /* 文字位置   */
 	cursor        : pointer;     /* カーソル   */
-	padding-top       : 18px;   /* 余白       */
-	padding-bottom       : 18px;   /* 余白       */
-	width: 130px;
+	padding-top       : 15px;   /* 余白       */
+	padding-bottom       : 15px;   /* 余白       */
+	width: 110px;
 	/* background    : #000066;     背景色     */
 	color         : #ffffff;     /* 文字色     */
 	line-height   : 1em;         /* 1行の高さ  */
 	box-shadow    : 8px 8px 20px #666666;  /* 影の設定 */
 	border        : 2px solid #000000;    /* 枠の指定 */
-	margin		: 5pt 10pt;
+	margin		: 3pt 6pt;
   }
   .button:hover {
 	transition    : .3s;         /* なめらか変化 */
@@ -74,14 +73,17 @@ ul, li {
 	color         : #123044;     /* 文字色     */
 	background    : #ffffff;     /* 背景色    */
   }
+  .button-unknown {
+	  background    : #7c7c7c;     /* 背景色     */
+  }
   .button-office {
 	  background    : #da9377;     /* 背景色     */
   }
   .button-home {
 	  background    : #7cc793;     /* 背景色     */
   }
-  .button-unknown {
-	  background    : #7c7c7c;     /* 背景色     */
+  .button-vac {
+	  background    : #b87c0d;     /* 背景色     */
   }
   .button-room {
 	  background    : #639fa3;     /* 背景色     */
