@@ -47,6 +47,9 @@ ul, li {
 	padding: 15px 25px;
 	margin: 0 auto;
 }
+.col-describe {
+	margin-left: 200px;
+}
 
 .inline-block {
 	display       : inline-block;
