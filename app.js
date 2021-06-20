@@ -34,7 +34,7 @@ const sessionStore = new MySQLStore({
     database: 'charlotte'
 });
 
-app.set('trust proxy', 1)
+app.set('trust proxy', 1) 
 app.use(
 	session({
 	  secret: 'my_secret_key',
@@ -71,7 +71,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/user/:user', (req, res) => {
-	now_user = req.params.user;
+	now_user = req.body.current_user;
 
 	let dt = new Date();
 	dt.add({"hours": 6});
