@@ -78,6 +78,7 @@ background    : #ffffff;     /* 背景色    */
 }
 .button-dis {
 	pointer-events:none;
+	box-shadow    : none;        /* 影消去 */
 }
 .button-unknown {
 	background    : #7c7c7c;     /* 背景色     */
