@@ -91,8 +91,11 @@ ul, li {
   .button-room {
 	  background    : #639fa3;     /* 背景色     */
   }
+  .button-mid {
+	  background    : #da1b1b;     /* 背景色     */
+  }
   .button-out {
-	  background    : #a05c72;     /* 背景色     */
+	  background    : #d3ae5e;     /* 背景色     */
   }
   .button-outside {
 	  background    : #9cca51;     /* 背景色     */
