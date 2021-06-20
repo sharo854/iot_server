@@ -34,7 +34,7 @@ const sessionStore = new MySQLStore({
     database: 'charlotte'
 });
 
-
+app.set('trust proxy', 1)
 app.use(
 	session({
 	  secret: 'my_secret_key',
