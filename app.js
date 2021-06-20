@@ -7,8 +7,6 @@ var cov = {Sun:7, Mon:1, Tue:2, Wed:3, Tur:4, Fri:5, Sat:6}
 var cov_kan = ["日", "月", "火", "水", "木", "金", "土", "日"]
 require('date-utils'); 
 
-var now_user;
-
 app.use(express.static('public'))
 
 const connection = mysql.createConnection({
@@ -70,7 +68,7 @@ app.get('/user/:user', (req, res) => {
 // 		[req.params.col, req.params.id, req.params.user],
 // 		(error, results) => {
 // 			// console.log(results);
-// 			res.redirect('/user/'+now_user);
+// 			res.redirect('/user/'+req.params.user);
 // 		}
 // 	);
 // });
@@ -81,7 +79,7 @@ app.post('/change/state_work/:user/:id', (req, res) => {
 		[req.params.id, req.params.user],
 		(error, results) => {
 			// console.log(results);
-			res.redirect('/user/'+now_user);
+			res.redirect('/user/'+req.params.user);
 		}
 	);
 });
@@ -92,7 +90,7 @@ app.post('/change/state_now/:user/:id', (req, res) => {
 		[req.params.id, req.params.user],
 		(error, results) => {
 			// console.log(results);
-			res.redirect('/user/'+now_user);
+			res.redirect('/user/'+req.params.user);
 		}
 	);
 });
