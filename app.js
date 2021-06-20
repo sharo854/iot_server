@@ -26,7 +26,7 @@ connection.connect((err) => {
   console.log('success');
 });
 
-cron.schedule('0 47 15 * * *', () => {
+cron.schedule('0 00 18 * * 1-5', () => {
 	connection.query(
 		'update attendance set state_work=0;',
 		(error, results) => {
@@ -42,6 +42,16 @@ app.get('/', (req, res) => {
 		(error, results) => {
 			console.log(results);
 			res.render('main.ejs', {items: results, timestr: timestring});
+		}
+	);
+});
+
+app.get('/user/:user', (req, res) => {
+	connection.query(
+		'SELECT * FROM attendance',
+		(error, results) => {
+			console.log(results);
+			res.render('main.ejs', {items: results, timestr: timestring, current_user: user});
 		}
 	);
 });
