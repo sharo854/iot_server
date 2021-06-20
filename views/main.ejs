@@ -54,14 +54,8 @@
 								<input type="hidden" name="user_name" value="名前">
 								<a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work] %> "><%= names[item.state_work] %></a>
 							</form>
-							<% if(typeof current_user!=='undefined') {
-								if(current_user!=item.user) { %>
-									操作不可
-								<% }else { %>
-									操作可
-								<% } %>
-							<% }else { %>
-								操作可
+							<% if(current_user!=='root'&&current_user!==item.user) {
+								操作不可
 							<% } %>
 						</li>
 					<% }) %>
