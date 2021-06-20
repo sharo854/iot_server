@@ -46,11 +46,11 @@ app.get('/', (req, res) => {
 	);
 });
 
-app.post('/change/:col/:user/:id', (req, res) => {
+app.post('/change/:colu/:user/:id', (req, res) => {
 	console.log('change');	
 	connection.query(
 		'update attendance set ?=? where user=?;',
-		[req.params.col, req.params.id, req.params.user],
+		[req.params.colu, req.params.id, req.params.user],
 		(error, results) => {
 			// console.log(results);
 			res.redirect('/');
