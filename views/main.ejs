@@ -16,6 +16,7 @@
 		<% var names_now = ["在室", "離室中", "睡眠中"]; %>
 		<% var cols = ["state_work", "state_now"]; %>
 		<% var color_class = ["button-office", "button-home", "button-unknown"]; %>
+		<% var color_class_now = ["button-room", "button-out", "button-sleep"]; %>
 		
 		<div class="state-wrapper">
 			<div class="container">
@@ -42,7 +43,7 @@
 							</form>
 							<form action="/change/state_now/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
 								<input type="hidden" name="user_name1" value="名前">
-								<a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class[item.state_now] %> "><%= names_now[item.state_now] %></a>
+								<a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_now[item.state_now] %> "><%= names_now[item.state_now] %></a>
 							</form>
 						</li>
 					<% }) %>

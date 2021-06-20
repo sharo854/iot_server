@@ -83,6 +83,15 @@ ul, li {
   .button-unknown {
 	  background    : #7c7c7c;     /* 背景色     */
   }
+  .button-room {
+	  background    : #2fdfec;     /* 背景色     */
+  }
+  .button-out {
+	  background    : #e75485;     /* 背景色     */
+  }
+  .button-sleep {
+	  background    : #261557;     /* 背景色     */
+  }
 
   li {
 	  padding	: 10px 0;
