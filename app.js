@@ -3,11 +3,18 @@ const mysql = require('mysql');
 const cron = require('node-cron');
 const app = express()
 
-var cov = {Mon:"月", Tue:"火", Wed:"水", Tur:"木", Fri:"金", Sat:"土", Sun:"日"}
+var cov = {Sun:7, Mon:1, Tue:2, Wed:3, Tur:4, Fri:5, Sat:6}
+var cov_kan = ["日", "月", "火", "水", "木", "金", "土", "日"]
 require('date-utils'); 
 var dt = new Date();
 dt.setHours(dt.getHours() + 6)
-var timestring = dt.toFormat("M/D (") + cov[dt.toFormat("DDD")] + ")";
+if(6<=cov[dt.toFormat("DDD")]) {
+	dt.setDays(dt.getDays() + 2)
+}
+if(cov[dt.toFormat("DDD")]=7) {
+	dt.setDays(dt.getDays() + 1)
+}
+var timestring = dt.toFormat("M/D (") + cov_kan[cov[dt.toFormat("DDD")]] + ")";
 
 app.use(express.static('public'))
 
