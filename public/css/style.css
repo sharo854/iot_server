@@ -91,6 +91,9 @@ ul, li {
   .button-out {
 	  background    : #a05c72;     /* 背景色     */
   }
+  .button-outside {
+	  background    : #9cca51;     /* 背景色     */
+  }
   .button-sleep {
 	  background    : #302552;     /* 背景色     */
   }
