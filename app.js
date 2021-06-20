@@ -35,6 +35,10 @@ cron.schedule('0 00 18 * * 1-5', () => {
 
 
 app.get('/', (req, res) => {
+	res.redirect('/user/root');
+});
+
+app.get('/user/:user', (req, res) => {
 	
 	let dt = new Date();
 	dt.add({"hours": 6});
@@ -42,22 +46,11 @@ app.get('/', (req, res) => {
 		dt.add({"days": 2});
 	}
 	if(cov[dt.toFormat("DDD")]==7) {
-		dt.add({"days": 2});
+		dt.add({"days": 1});
 	}
 	let timestring = dt.toFormat("M/D (") + cov_kan[cov[dt.toFormat("DDD")]] + ")";
 	console.log(timestring);
 
-
-	connection.query(
-		'SELECT * FROM attendance',
-		(error, results) => {
-			console.log(results);
-			res.render('main.ejs', {items: results, timestr: dt.toFormat("M/D (") + cov_kan[cov[dt.toFormat("DDD")]] + ")"});
-		}
-	);
-});
-
-app.get('/user/:user', (req, res) => {
 	connection.query(
 		'SELECT * FROM attendance',
 		(error, results) => {
