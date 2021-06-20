@@ -59,7 +59,7 @@ ul, li {
 	font-weight	:bold;
 	text-align    : center;      /* 文字位置   */
 	cursor        : pointer;     /* カーソル   */
-	padding       : 18px 30px;   /* 余白       */
+	padding       : 18px auto;   /* 余白       */
 	/* background    : #000066;     背景色     */
 	color         : #ffffff;     /* 文字色     */
 	line-height   : 1em;         /* 1行の高さ  */
