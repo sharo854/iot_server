@@ -41,8 +41,10 @@
 							<form action="/change/<%= cols[1] %>/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
 								<input type="hidden" name="user_name1" value="名前">
 								<a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_now[item.state_now] %> " 
-									<% if(current_user=='undefined'||current_user==item.user) { %>
-										disable
+									<% if(typeof current_user!=='undefined') {
+										if(current_user!=item.user) { %>
+											disable
+										<% } %>
 									<% } %>>
 									<%= names_now[item.state_now] %></a>
 							</form>
