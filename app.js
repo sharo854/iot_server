@@ -28,7 +28,7 @@ connection.connect((err) => {
 
 cron.schedule('0 51 21 * * *', () => {
 	connection.query(
-		'update attendance set state=3;',
+		'update attendance set state_work=0;',
 		(error, results) => {
 			console.log("リセット");
 		}
@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 app.post('/change/:user/:id', (req, res) => {
 	console.log('change');	
 	connection.query(
-		'update attendance set state=? where user=?;',
+		'update attendance set state_work=? where user=?;',
 		[req.params.id, req.params.user],
 		(error, results) => {
 			// console.log(results);
@@ -68,7 +68,7 @@ app.get('/api/v1/test', (req, res) => {
 app.get('/api/v1/state', (req, res) => {
 	console.log('api/state');	
 	connection.query(
-		'SELECT state FROM attendance where user="てい"',
+		'SELECT state_work FROM attendance where user="てい"',
 		(error, results) => {
 			console.log(results);
 			res.render('stateapi.ejs', {item: results[0]});

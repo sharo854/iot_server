@@ -7,6 +7,6 @@
 /* スマホ向けレイアウト */
 @media all and (max-width: 670px) {
 	* {
-		font-size: 300%;
+		font-size: 220%;
 	}
 }
