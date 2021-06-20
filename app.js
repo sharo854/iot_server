@@ -46,28 +46,39 @@ app.get('/', (req, res) => {
 	);
 });
 
-app.post('/change/state_work/:user/:id', (req, res) => {
+app.post('/change/:col/:user/:id', (req, res) => {
 	console.log('change');	
 	connection.query(
-		'update attendance set state_work=? where user=?;',
-		[req.params.id, req.params.user],
+		'update attendance set ?=? where user=?;',
+		[req.params.col, req.params.id, req.params.user],
 		(error, results) => {
 			// console.log(results);
 			res.redirect('/');
 		}
 	);
 });
-app.post('/change/state_now/:user/:id', (req, res) => {
-	console.log('change');	
-	connection.query(
-		'update attendance set state_now=? where user=?;',
-		[req.params.id, req.params.user],
-		(error, results) => {
-			// console.log(results);
-			res.redirect('/');
-		}
-	);
-});
+// app.post('/change/state_work/:user/:id', (req, res) => {
+// 	console.log('change');	
+// 	connection.query(
+// 		'update attendance set state_work=? where user=?;',
+// 		[req.params.id, req.params.user],
+// 		(error, results) => {
+// 			// console.log(results);
+// 			res.redirect('/');
+// 		}
+// 	);
+// });
+// app.post('/change/state_now/:user/:id', (req, res) => {
+// 	console.log('change');	
+// 	connection.query(
+// 		'update attendance set state_now=? where user=?;',
+// 		[req.params.id, req.params.user],
+// 		(error, results) => {
+// 			// console.log(results);
+// 			res.redirect('/');
+// 		}
+// 	);
+// });
 
 app.get('/api/v1/test', (req, res) => {
 	console.log('test');
