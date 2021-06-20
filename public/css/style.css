@@ -69,42 +69,45 @@ ul, li {
 	box-shadow    : 8px 8px 20px #666666;  /* 影の設定 */
 	border        : 2px solid #000000;    /* 枠の指定 */
 	margin		: 3pt 6pt;
-  }
-  .button:hover {
-	transition    : .3s;         /* なめらか変化 */
-	box-shadow    : none;        /* カーソル時の影消去 */
-	color         : #123044;     /* 文字色     */
-	background    : #ffffff;     /* 背景色    */
-  }
-  .button-unknown {
-	  background    : #7c7c7c;     /* 背景色     */
-  }
-  .button-office {
-	  background    : #da9377;     /* 背景色     */
-  }
-  .button-home {
-	  background    : #7cc793;     /* 背景色     */
-  }
-  .button-vac {
-	  background    : #b87c0d;     /* 背景色     */
-  }
-  .button-room {
-	  background    : #639fa3;     /* 背景色     */
-  }
-  .button-mid {
-	  background    : #da1b1b;     /* 背景色     */
-  }
-  .button-out {
-	  background    : #d3ae5e;     /* 背景色     */
-  }
-  .button-outside {
-	  background    : #9cca51;     /* 背景色     */
-  }
-  .button-sleep {
-	  background    : #302552;     /* 背景色     */
-  }
+}
+.button:hover {
+transition    : .3s;         /* なめらか変化 */
+box-shadow    : none;        /* カーソル時の影消去 */
+color         : #123044;     /* 文字色     */
+background    : #ffffff;     /* 背景色    */
+}
+.button-dis {
+	pointer-events:none;
+}
+.button-unknown {
+	background    : #7c7c7c;     /* 背景色     */
+}
+.button-office {
+	background    : #da9377;     /* 背景色     */
+}
+.button-home {
+	background    : #7cc793;     /* 背景色     */
+}
+.button-vac {
+	background    : #b87c0d;     /* 背景色     */
+}
+.button-room {
+	background    : #639fa3;     /* 背景色     */
+}
+.button-mid {
+	background    : #da1b1b;     /* 背景色     */
+}
+.button-out {
+	background    : #d3ae5e;     /* 背景色     */
+}
+.button-outside {
+	background    : #9cca51;     /* 背景色     */
+}
+.button-sleep {
+	background    : #302552;     /* 背景色     */
+}
 
-  li {
-	  padding	: 10px 0;
-	  height: 100px;
-  }
+li {
+	padding	: 10px 0;
+	height: 100px;
+}
