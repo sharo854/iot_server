@@ -28,11 +28,11 @@
 					<% items.forEach((item, index) => { %>
 						<% 
 						var nextstate_now = item.state_now+1;
-						if(nextstate_now>2) {
+						if(nextstate_now>4) {
 							nextstate_now = 0;
 						}
 						var nextstate = item.state_work+1;
-						if(nextstate>4) {
+						if(nextstate>3) {
 							nextstate = 0;
 						}
 						%>
