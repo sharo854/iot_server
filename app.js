@@ -6,15 +6,6 @@ const app = express()
 var cov = {Sun:7, Mon:1, Tue:2, Wed:3, Tur:4, Fri:5, Sat:6}
 var cov_kan = ["日", "月", "火", "水", "木", "金", "土", "日"]
 require('date-utils'); 
-var dt = new Date();
-dt.setHours(dt.getHours() + 6)
-if(6<=cov[dt.toFormat("DDD")]) {
-	dt.setDays(dt.getDays() + 2)
-}
-if(cov[dt.toFormat("DDD")]=7) {
-	dt.setDays(dt.getDays() + 1)
-}
-var timestring = dt.toFormat("M/D (") + cov_kan[cov[dt.toFormat("DDD")]] + ")";
 
 app.use(express.static('public'))
 
@@ -44,6 +35,17 @@ cron.schedule('0 00 18 * * 1-5', () => {
 
 
 app.get('/', (req, res) => {
+	
+	var dt = new Date();
+	dt.setHours(dt.getHours() + 6)
+	if(6==cov[dt.toFormat("DDD")]) {
+		dt.setDays(dt.getDays() + 2)
+	}
+	if(cov[dt.toFormat("DDD")]==7) {
+		dt.setDays(dt.getDays() + 1)
+	}
+	var timestring = dt.toFormat("M/D (") + cov_kan[cov[dt.toFormat("DDD")]] + ")";
+
 	connection.query(
 		'SELECT * FROM attendance',
 		(error, results) => {
