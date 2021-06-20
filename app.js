@@ -71,7 +71,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/user/:user', (req, res) => {
-	now_user = req.body.current_user;
+	now_user = req.params.user;
 
 	let dt = new Date();
 	dt.add({"hours": 6});
@@ -88,7 +88,7 @@ app.get('/user/:user', (req, res) => {
 		'SELECT * FROM attendance',
 		(error, results) => {
 			console.log(results);
-			res.render('main.ejs', {items: results, timestr: timestring, current_user: now_user});
+			res.render('main.ejs', {items: results, timestr: timestring, current_user: req.params.user});
 		}
 	);
 });
