@@ -50,7 +50,11 @@
 								<!-- <input type="submit" value="<%= names[item.state_work] %>" 
 												class="button <%= color_class[item.state_work] %> "/> -->
 								<input type="hidden" name="user_name" value="名前">
-								<a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work] %> "><%= names[item.state_work] %></a>
+								<a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work] %> 
+									<% if(current_user!=='root'&&current_user!==item.user) { %>
+										button-dis
+									<% } %>">
+									<%= names[item.state_work] %></a>
 							</form>
 							<!-- <% if(current_user!=='root'&&current_user!==item.user) { %>
 								操作不可
