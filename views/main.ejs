@@ -40,7 +40,7 @@
 								<a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work] %> "><%= names[item.state_work] %></a>
 							</form>
 							<form action="/change/state_now/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
-								<input type="hidden" name="user_name" value="名前">
+								<input type="hidden" name="user_name1" value="名前">
 								<a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class[item.state_now] %> "><%= names_now[item.state_now] %></a>
 							</form>
 						</li>
