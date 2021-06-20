@@ -37,12 +37,12 @@ cron.schedule('0 00 18 * * 1-5', () => {
 app.get('/', (req, res) => {
 	
 	var dt = new Date();
-	dt.setHours(dt.getHours() + 6)
+	dt.add({"hours": 6});
 	if(6==cov[dt.toFormat("DDD")]) {
-		dt.setDays(dt.getDays() + 2)
+		dt.add({"days": 2});
 	}
 	if(cov[dt.toFormat("DDD")]==7) {
-		dt.setDays(dt.getDays() + 1)
+		dt.add({"days": 2});
 	}
 	var timestring = dt.toFormat("M/D (") + cov_kan[cov[dt.toFormat("DDD")]] + ")";
 
