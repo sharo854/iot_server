@@ -51,7 +51,7 @@ app.get('/user/:user', (req, res) => {
 		'SELECT * FROM attendance',
 		(error, results) => {
 			console.log(results);
-			res.render('main.ejs', {items: results, timestr: timestring, current_user: user});
+			res.render('main.ejs', {items: results, timestr: timestring, current_user: req.params.user});
 		}
 	);
 });
