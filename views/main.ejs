@@ -14,6 +14,7 @@
 
 		<% var names = ["不明", "出社", "在宅", "勤務終了"]; %>
 		<% var names_now = ["在室", "離室中", "睡眠中"]; %>
+		<% var cols = ["state_work", "state_now"]; %>
 		<% var color_class = ["button-office", "button-home", "button-unknown"]; %>
 		
 		<div class="state-wrapper">
@@ -33,13 +34,13 @@
 						%>
 						<li>
 							<span><%= item.user %></span>
-							<form action="/change/<%= "state_work" %>/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
+							<form action="/change/<%= cols[0] %>/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
 								<!-- <input type="submit" value="<%= names[item.state_work] %>" 
 												class="button <%= color_class[item.state_work] %> "/> -->
 								<input type="hidden" name="user_name" value="名前">
 								<a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work] %> "><%= names[item.state_work] %></a>
 							</form>
-							<form action="/change/<%= "state_now" %></form>/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
+							<form action="/change/<%= cols[1] %>/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
 								<input type="hidden" name="user_name1" value="名前">
 								<a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class[item.state_now] %> "><%= names_now[item.state_now] %></a>
 							</form>
