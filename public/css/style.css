@@ -53,13 +53,13 @@ ul, li {
 }
 .button {
 	display       : inline-block;
-	width: 130px;
 	border-radius : 7%;          /* 角丸       */
 	font-size     : 18pt;        /* 文字サイズ */
 	font-weight	:bold;
 	text-align    : center;      /* 文字位置   */
 	cursor        : pointer;     /* カーソル   */
 	padding       : 18px auto;   /* 余白       */
+	width: 130px;
 	/* background    : #000066;     背景色     */
 	color         : #ffffff;     /* 文字色     */
 	line-height   : 1em;         /* 1行の高さ  */
