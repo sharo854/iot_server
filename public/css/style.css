@@ -58,7 +58,8 @@ ul, li {
 	font-weight	:bold;
 	text-align    : center;      /* 文字位置   */
 	cursor        : pointer;     /* カーソル   */
-	padding       : 18px auto;   /* 余白       */
+	padding-top       : 18px;   /* 余白       */
+	padding-bottom       : 18px;   /* 余白       */
 	width: 130px;
 	/* background    : #000066;     背景色     */
 	color         : #ffffff;     /* 文字色     */
