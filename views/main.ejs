@@ -12,7 +12,8 @@
 			<a href="/" class="header-logo">IoT管理画面</a>
 		</header>
 
-		<% var names = ["出社", "在宅", "不明"]; %>
+		<% var names = ["不明", "出社", "在宅", "勤務終了"]; %>
+		<% var names_now = ["在室", "離室中", "睡眠中"]; %>
 		<% var color_class = ["button-office", "button-home", "button-unknown"]; %>
 		
 		<div class="state-wrapper">
@@ -21,19 +22,26 @@
 				<ul>
 					<% items.forEach((item, index) => { %>
 						<% 
-							var nextstate = item.state_work+1;
-							if(nextstate>2) {
-								nextstate = 0;
-							}
+						var nextstate = item.state_work+1;
+						if(nextstate>2) {
+							nextstate = 0;
+						}
+						var nextstate_now = item.state_now+1;
+						if(nextstate_now>2) {
+							nextstate_now = 0;
+						}
 						%>
 						<li>
 							<span><%= item.user %></span>
-							<form action="/change/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
+							<form action="/change/state_work/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
 								<!-- <input type="submit" value="<%= names[item.state_work] %>" 
 												class="button <%= color_class[item.state_work] %> "/> -->
 								<input type="hidden" name="user_name" value="名前">
 								<a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work] %> "><%= names[item.state_work] %></a>
-								
+							</form>
+							<form action="/change/state_now/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
+								<input type="hidden" name="user_name" value="名前">
+								<a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class[item.state_now] %> "><%= names_now[item.state_now] %></a>
 							</form>
 						</li>
 					<% }) %>
