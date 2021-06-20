@@ -22,17 +22,17 @@
 					<% items.forEach((item, index) => { %>
 						<% 
 							var nextstate = item.state_work+1;
-							if(nextstate>3) {
+							if(nextstate>2) {
 								nextstate = 1;
 							}
 						%>
 						<li>
 							<span><%= item.user %></span>
 							<form action="/change/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
-								<!-- <input type="submit" value="<%= names[item.state_work-1] %>" 
-												class="button <%= color_class[item.state_work-1] %> "/> -->
+								<!-- <input type="submit" value="<%= names[item.state_work] %>" 
+												class="button <%= color_class[item.state_work] %> "/> -->
 								<input type="hidden" name="user_name" value="名前">
-								<a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work-1] %> "><%= names[item.state_work-1] %></a>
+								<a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work] %> "><%= names[item.state_work] %></a>
 								
 							</form>
 						</li>
