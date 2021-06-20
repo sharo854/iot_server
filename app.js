@@ -45,6 +45,8 @@ app.get('/', (req, res) => {
 		dt.add({"days": 2});
 	}
 	var timestring = dt.toFormat("M/D (") + cov_kan[cov[dt.toFormat("DDD")]] + ")";
+	console.log(timestring)
+	
 
 	connection.query(
 		'SELECT * FROM attendance',
