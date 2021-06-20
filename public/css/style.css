@@ -53,6 +53,7 @@ ul, li {
 }
 .button {
 	/* display       : inline-block; */
+	width: 130px;
 	border-radius : 7%;          /* 角丸       */
 	font-size     : 18pt;        /* 文字サイズ */
 	font-weight	:bold;
