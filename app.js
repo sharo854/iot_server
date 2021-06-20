@@ -46,13 +46,13 @@ app.get('/', (req, res) => {
 	}
 	var timestring = dt.toFormat("M/D (") + cov_kan[cov[dt.toFormat("DDD")]] + ")";
 	console.log(timestring)
-	
+
 
 	connection.query(
 		'SELECT * FROM attendance',
 		(error, results) => {
 			console.log(results);
-			res.render('main.ejs', {items: results, timestr: timestring});
+			res.render('main.ejs', {items: results, timestr: dt.toFormat("M/D (") + cov_kan[cov[dt.toFormat("DDD")]] + ")"});
 		}
 	);
 });
