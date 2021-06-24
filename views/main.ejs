@@ -26,13 +26,15 @@
 				
 				<ul>
 					<%= let i=0 %>
-					<% for(i=0; i<items.length; i++) { %>
-						<% if(items[i].user == current_user) {
+					<% for(i=0; i items.length; i++) { %>
+						<% if(items[i].user == current_user) { %>
+							<%
 							tempitem = items[i];
 							items.slice(i);
 							items.unshift = tempitem;
 							break;
-						} %>
+							%>
+						<%} %>
 					<% } %>
 					<%= i %>
 					<!-- for(let i=0; i<items.length; i++) {
