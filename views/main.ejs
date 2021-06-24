@@ -27,11 +27,11 @@
 				<ul>
 					<% var newitems = new Array() %>
 					<% items.forEach((item, index) => { %>
-						<% if(items[index].user == current_user) { %>
+						<% if(items[index].user == current_user) { 
 							items.unshift = items[index]
-						<% }else { %>
+						 }else { 
 							items.push = items[index]
-						<% } %>
+						 } %>
 					<% }); %>
 
 					<% items.forEach((item, index) => { %>
