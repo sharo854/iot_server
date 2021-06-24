@@ -26,8 +26,12 @@
 				
 				<ul>
 					<% for(let i=0; i<items.length; i++) { %>
-
-						<p>	<%= i %></p>
+						<% if(items[i].user == current_user && !x) {
+							tempitem = items[i];
+							items.slice(index);
+							items.unshift = tempitem;
+							break;
+						} %>
 					<% } %>
 					<!-- for(let i=0; i<items.length; i++) {
 						if(items[i].user == current_user && !x) {
