@@ -25,7 +25,7 @@
 				</div>
 				
 				<ul>
-					<% var newitem = new Array() %>
+					<% var newitems = new Array() %>
 					<% items.forEach((item, index) => { %>
 						<% if(items[i].user == current_user) { %>
 							items.unshift = items[i]
@@ -34,25 +34,6 @@
 						<% } %>
 					<% }); %>
 
-					<!-- <% for(i=0; i items.length; i++) { %>
-						<% if(items[i].user == current_user) { %>
-							<%
-							tempitem = items[i];
-							items.slice(i);
-							items.unshift = tempitem;
-							break;
-							%>
-						<% } %>
-					<% } %>
-					<%= i %> -->
-					<!-- for(let i=0; i<items.length; i++) {
-						if(items[i].user == current_user && !x) {
-							tempitem = items[i];
-							items.slice(index);
-							items.unshift = tempitem;
-							break;
-						}
-					} -->
 					<% items.forEach((item, index) => { %>
 						<% 
 						var nextstate_now = item.state_now+1;
