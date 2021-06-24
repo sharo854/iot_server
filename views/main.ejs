@@ -28,7 +28,7 @@
 					<% for(let i=0; i<items.length; i++) { %>
 						<% if(items[i].user == current_user) {
 							tempitem = items[i];
-							items.slice(index);
+							items.slice(i);
 							items.unshift = tempitem;
 							break;
 						} %>
