@@ -25,16 +25,16 @@
 				</div>
 				
 				<ul>
-					<% var newitems = new Array() %>
+					<!-- <% var newitems = new Array() %>
 					<% items.forEach((item, index) => { %>
 						<% if(items[index].user == current_user) { 
 							items.unshift = items[index]
 						 }else { 
 							items.push = items[index]
 						 } %>
-					<% }); %>
+					<% }); %> -->
 
-					<% newitems.forEach((item, index) => { %>
+					<% items.forEach((item, index) => { %>
 						<% 
 						var nextstate_now = item.state_now+1;
 						if(nextstate_now>4) {
