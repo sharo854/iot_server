@@ -26,15 +26,14 @@
 				
 				<ul>
 					<%
-					var x = false;
-					items.forEach((item, index) => { 
-						if(item.user == current_user && !x) {
-							tempitem = item;
+					for(let i=0; i<items.length; i++) {
+						if(items[i].user == current_user && !x) {
+							tempitem = items[i];
 							items.slice(index);
 							items.unshift = tempitem;
-							x = true;
+							break;
 						}
-					});
+					}
 					%>
 					<% items.forEach((item, index) => { %>
 						<% 
