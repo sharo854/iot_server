@@ -5,7 +5,7 @@ const app = express()
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 
-var cov = {Sun:7, Mon:1, Tue:2, Wed:3, Tur:4, Fri:5, Sat:6}
+var cov = {Sun:7, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6}
 var cov_kan = ["日", "月", "火", "水", "木", "金", "土", "日"]
 require('date-utils'); 
 
