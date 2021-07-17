@@ -50,7 +50,10 @@
 							<span><%= item.user %></span>
 							<form action="/change/<%= cols[1] %>/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
 								<input type="hidden" name="user_name1" value="名前">
-								<a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_now[item.state_now] %> button-dis"><%= names_now[item.state_now] %></a>
+								<a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_now[item.state_now] %>
+									<% if(current_user!=='root') { %>
+										button-dis
+									<% } %>"><%= names_now[item.state_now] %></a>
 							</form>
 							<form action="/change/<%= cols[0] %>/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
 								<!-- <input type="submit" value="<%= names[item.state_work] %>" 
