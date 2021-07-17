@@ -17,7 +17,7 @@
 		<% var names_now = ["不在", "在室"]; %>
 		<% var cols = ["state_work", "state_now"]; %>
 		<% var color_class = ["button-unknown", "button-office", "button-home", "button-vac"]; %>
-		<% var color_class_now = ["button-room", "button-mid", "button-out", "button-outside", "button-sleep"]; %>
+		<% var color_class_now = ["button-out", "button-room", "button-mid", "button-outside", "button-sleep"]; %>
 		
 		<div class="state-wrapper">
 			<div class="container">
@@ -38,7 +38,7 @@
 					<% items.forEach((item, index) => { %>
 						<% 
 						var nextstate_now = item.state_now+1;
-						if(nextstate_now>2) {
+						if(nextstate_now>1) {
 							nextstate_now = 0;
 						}
 						var nextstate = item.state_work+1;
