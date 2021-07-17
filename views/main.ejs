@@ -13,7 +13,8 @@
 		</header>
 
 		<% var names = ["不明", "出社", "在宅", "休暇"]; %>
-		<% var names_now = ["在室", "取込中", "離室中", "外出中", "睡眠中"]; %>
+		<!-- <% var names_now = ["在室", "取込中", "離室中", "外出中", "睡眠中"]; %> -->
+		<% var names_now = ["不在", "在室"]; %>
 		<% var cols = ["state_work", "state_now"]; %>
 		<% var color_class = ["button-unknown", "button-office", "button-home", "button-vac"]; %>
 		<% var color_class_now = ["button-room", "button-mid", "button-out", "button-outside", "button-sleep"]; %>
@@ -37,7 +38,7 @@
 					<% items.forEach((item, index) => { %>
 						<% 
 						var nextstate_now = item.state_now+1;
-						if(nextstate_now>4) {
+						if(nextstate_now>2) {
 							nextstate_now = 0;
 						}
 						var nextstate = item.state_work+1;
