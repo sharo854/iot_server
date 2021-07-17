@@ -118,6 +118,7 @@ app.post('/change/state_work/:user/:id', (req, res) => {
 app.post('/change/state_now/:user/:id', (req, res) => {
 	console.log('change');	
 	console.log(req.params.id);	
+	console.log(req.params.user);	
 	connection.query(
 		'update attendance set state_now=? where user=?;',
 		[req.params.id, req.params.user],
