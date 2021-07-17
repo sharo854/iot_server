@@ -22,21 +22,25 @@ int preval = val;
 //}
 
 void setup() {
-//  Serial.begin(115200);
+  Serial.begin(115200);
   pinMode(2, OUTPUT);
   pinMode(inPin, INPUT_PULLUP);
 //  attachInterrupt(inPin, stateChange, CHANGE);
 
-  wifiMulti.addAP("しゃろの iPhone XS", "avengersJ8");
+//  wifiMulti.addAP("しゃろの iPhone XS", "avengersJ8");
+//  wifiMulti.addAP("Buffalo-G-8B00", "yidvvu8hccrcw");
+  wifiMulti.addAP("Buffalo-G-89C0", "wmprhbk75icdn");
 }
 
 
 void loop() {
   val = digitalRead(inPin);
+  Serial.println(val);
   if(preval!=val) {
     digitalWrite(2, val);
     preval = val;
     if((wifiMulti.run() == WL_CONNECTED)) {
+      Serial.println("[Connected]");
       HTTPClient http;
       http.begin("http://164.70.117.162:3002/change/state_now/tei/"+String(val));
       http.POST("");
