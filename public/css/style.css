@@ -48,7 +48,8 @@ ul, li {
 	margin: 0 auto;
 }
 .col-describe {
-	margin-left: 60px;
+	/* margin-left: 60px; */
+	margin-left: 150px;
 }
 
 .inline-block {
