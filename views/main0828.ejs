@@ -10,6 +10,9 @@
 	<body>
 		<header>
 			<a href="/user/<%= current_user %>" class="header-logo">IoT管理画面</a>
+            <div class="user">
+                <%= people[current_user] %>
+            </div>
 		</header>
 		<% var names = ["不明", "出社", "在宅", "休暇"]; %>
 		<% var people = {tei:"てい", ueno:"上野", meguro:"目黒"};%>
