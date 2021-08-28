@@ -154,6 +154,19 @@ app.post('/change/humidity/:user/:id', (req, res) => {
 		}
 	);
 });
+app.post('/change/ac_mode/:user/:id', (req, res) => {
+	console.log('change');	
+	console.log(req.params.id);	
+	console.log(req.params.user);	
+	connection.query(
+		'update attendance set ac_mode=? where user=?;',
+		[req.params.id, req.params.user],
+		(error, results) => {
+			// console.log(results);
+			res.redirect('/user/'+req.params.user);
+		}
+	);
+});
 
 app.get('/api/v1/test', (req, res) => {
 	console.log('test');
