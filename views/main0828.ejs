@@ -49,32 +49,33 @@
                                 nextstate = 0;
                             }
                             %>
-                            <ul>
-                                <li class="self">
-                                    <div class="self-describe">
-                                        現在の状態
-                                    </div>
-                                    <form action="/change/<%= cols[1] %>/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
-                                        <input type="hidden" name="user_name1" value="名前">
-                                        <a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_now[item.state_now] %>
-                                            <% if(current_user!=='root') { %>
-                                                button-dis
-                                            <% } %>"><%= names_now[item.state_now] %></a>
-                                    </form>
-                                </li>
-                                <li class="self">
-                                    <form action="/change/<%= cols[0] %>/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
-                                        <!-- <input type="submit" value="<%= names[item.state_work] %>" 
-                                                        class="button <%= color_class[item.state_work] %> "/> -->
-                                        <input type="hidden" name="user_name" value="名前">
-                                        <a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work] %> 
-                                            <% if(current_user!=='root'&&current_user!==item.user) { %>
-                                                button-dis
-                                            <% } %>">
-                                            <%= names[item.state_work] %></a>
-                                    </form>
-                                </li>
-                            </ul>
+                            <div class="self">
+                                <div class="self-describe">
+                                    現在の状態
+                                </div>
+                                <form action="/change/<%= cols[1] %>/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
+                                    <input type="hidden" name="user_name1" value="名前">
+                                    <a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_now[item.state_now] %>
+                                        <% if(current_user!=='root') { %>
+                                            button-dis
+                                        <% } %>"><%= names_now[item.state_now] %></a>
+                                </form>
+                            </div>
+                            <div class="self">
+                                <div class="self-describe">
+                                    出社状況
+                                </div>
+                                <form action="/change/<%= cols[0] %>/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
+                                    <!-- <input type="submit" value="<%= names[item.state_work] %>" 
+                                                    class="button <%= color_class[item.state_work] %> "/> -->
+                                    <input type="hidden" name="user_name" value="名前">
+                                    <a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work] %> 
+                                        <% if(current_user!=='root'&&current_user!==item.user) { %>
+                                            button-dis
+                                        <% } %>">
+                                        <%= names[item.state_work] %></a>
+                                </form>
+                            </div>
 
                             <!-- <div class="self-contents <%= color_class_now[item.state_now] %>">
                                 <%= names_now[item.state_now] %>
