@@ -63,6 +63,10 @@ ul, li {
 	padding-bottom: 5px;
 	border-bottom: medium solid #ff00ff;
 }
+
+.contents-end {
+	border-bottom: 1px solid #666666;
+}
 .self-describe {
 	display: table-cell;
 	width: 180px;
