@@ -12,7 +12,7 @@ void setup() {
 }
 
 void loop() {
-unsigned int dac[6];
+  unsigned int dac[6];
   unsigned int i, t ,h;
   float temperature, humidity;
   
