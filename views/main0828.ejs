@@ -41,7 +41,13 @@
                         現在の状態
                     </div>
                     <div class="self-contents">
-                        <%= people[current_user] %>
+                        <form action="/change/<%= cols[1] %>/<%= current_user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
+                            <input type="hidden" name="user_name1" value="名前">
+                            <a href="javascript:form2[0].submit()" class="button <%= color_class_now[current_user.state_now] %>
+                                <% if(current_user!=='root') { %>
+                                    button-dis
+                                <% } %>"><%= names_now[current_user.state_now] %></a>
+                        </form>
                     </div>
                 </div>
 				
