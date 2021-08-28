@@ -85,7 +85,11 @@
                 </div>
 				
                 <div class="contents-end">
-                    部屋の室温：℃   湿度：%
+                    <% items.forEach((item, index) => {
+                        if(item.user==current_user) { %>
+                            部屋の室温：<%= item.temperature.toFixed(1) %>℃   湿度：<%= item.humidity.toFixed(0) %>%
+                        <% }
+                    }); %>
                 </div>
 
 				<div class="contents-end">
@@ -137,7 +141,7 @@
                             </div>
                         <% } %>
 					<% }); %>
-				    <span>平日18:00リセット</span>
+				    平日18:00リセット
                 </div>
 				<!-- <input type="range" name="brightness" min="0" max="100"> -->
 			</div>
