@@ -6,6 +6,7 @@
 
 #define USE_SERIAL Serial
 
+WiFiMulti wifiMulti;
 
 String user = "tei";
 //String user = "ueno";
