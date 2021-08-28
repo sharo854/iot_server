@@ -61,7 +61,7 @@ ul, li {
 .self {
 	display: table;
 	padding-bottom: 5px;
-	border-bottom: #666666, 1px;
+	border-bottom: 1px, solid, #666666, ;
 }
 .self-describe {
 	display: table-cell;
