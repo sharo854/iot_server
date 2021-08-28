@@ -48,6 +48,10 @@ ul, li {
 	padding: 15px 25px;
 	margin: 0 auto;
 }
+
+.user{
+	padding: 5px;
+}
 .col-describe {
 	/* margin-left: 60px; */
 	margin-left: 185px;
