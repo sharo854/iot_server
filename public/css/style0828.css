@@ -61,7 +61,6 @@ ul, li {
 .self {
 	display: table;
 	padding-bottom: 5px;
-	border-bottom: medium solid #ff00ff;
 }
 
 .contents-end {
