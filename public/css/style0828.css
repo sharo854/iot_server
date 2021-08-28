@@ -114,6 +114,16 @@ background    : #ffffff;     /* 背景色    */
 	box-shadow    : none;        /* 影消去 */
 	opacity:0.7;
 }
+.button-cooling {
+	background    : #4169e1;     /* 背景色     */
+}
+.button-dry {
+	background    : #d2b48c;     /* 背景色     */
+}
+.button-heating {
+	background    : #ff7f50;     /* 背景色     */
+}
+
 .button-unknown {
 	background    : #7c7c7c;     /* 背景色     */
 }
