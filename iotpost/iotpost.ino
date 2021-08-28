@@ -28,8 +28,8 @@ void setup() {
 //  attachInterrupt(inPin, stateChange, CHANGE);
 
 //  wifiMulti.addAP("しゃろの iPhone XS", "avengersJ8");
-//  wifiMulti.addAP("Buffalo-G-8B00", "yidvvu8hccrcw");
-  wifiMulti.addAP("Buffalo-G-89C0", "wmprhbk75icdn");
+  wifiMulti.addAP("Buffalo-G-8B00", "yidvvu8hccrcw");// ueno wifi
+//  wifiMulti.addAP("Buffalo-G-89C0", "wmprhbk75icdn"); // meguro wifi
 }
 
 
@@ -42,7 +42,7 @@ void loop() {
     if((wifiMulti.run() == WL_CONNECTED)) {
       Serial.println("[Connected]");
       HTTPClient http;
-      http.begin("http://164.70.117.162:3002/change/state_now/tei/"+String(val));
+      http.begin("http://164.70.117.162:3002/change/state_now/ueno/"+String(val));
       http.POST("");
       http.end();
     }
