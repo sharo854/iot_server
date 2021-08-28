@@ -1,5 +1,6 @@
 * {
 	box-sizing: border-box;
+	font-size: 12pt;
 }
 
 a {
@@ -8,9 +9,8 @@ a {
 }
 
 html {
-	font-size: 15pt;
 	font-family: 'Hiragino Sans', sans-serif;
-	line-height: 1.7;
+	line-height: 1.5;
 	letter-spacing: 1px;
 }
 
@@ -22,8 +22,10 @@ body {
 
 header {
 	/* height: 56px; */
+	display: flex;
 	padding: 15px;
 	background-color: #7bc6e4;
+	justify-content: space-between;
 	/* border-bottom: 1px solid #2473d3; */
 }
 
@@ -44,12 +46,42 @@ ul, li {
 
 .container {
 	width: 1200px;
-	padding: 15px 25px;
+	padding: 0 25px;
 	margin: 0 auto;
+}
+
+.user{
+	padding: 5px;
 }
 .col-describe {
 	/* margin-left: 60px; */
 	margin-left: 185px;
+}
+
+.self {
+	display: table;
+	padding-bottom: 5px;
+}
+
+.contents-end {
+	border-bottom: 1px solid #666666;
+	padding: 10px;
+}
+.self-describe {
+	display: table-cell;
+	width: 180px;
+	/* text-align: center; */
+	vertical-align: middle;
+}
+.other-describe {
+	display: table-cell;
+	width: 60px;
+	/* text-align: center; */
+	vertical-align: middle;
+}
+.self-contents {
+	display       : inline-block;
+	width: 100px;
 }
 
 .inline-block {
@@ -61,8 +93,8 @@ ul, li {
 	font-weight	:bold;
 	text-align    : center;      /* 文字位置   */
 	cursor        : pointer;     /* カーソル   */
-	padding-top       : 15px;   /* 余白       */
-	padding-bottom       : 15px;   /* 余白       */
+	padding-top       : 10px;   /* 余白       */
+	padding-bottom       : 10px;   /* 余白       */
 	width: 110px;
 	/* background    : #000066;     背景色     */
 	color         : #ffffff;     /* 文字色     */
@@ -82,6 +114,16 @@ background    : #ffffff;     /* 背景色    */
 	box-shadow    : none;        /* 影消去 */
 	opacity:0.7;
 }
+.button-cooling {
+	background    : #4169e1;     /* 背景色     */
+}
+.button-dry {
+	background    : #d2b48c;     /* 背景色     */
+}
+.button-heating {
+	background    : #ff7f50;     /* 背景色     */
+}
+
 .button-unknown {
 	background    : #7c7c7c;     /* 背景色     */
 }

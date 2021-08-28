@@ -88,7 +88,7 @@ app.get('/user/:user', (req, res) => {
 		'SELECT * FROM attendance',
 		(error, results) => {
 			console.log(results);
-			res.render('main.ejs', {items: results, timestr: timestring, current_user: req.params.user});
+			res.render('main0828.ejs', {items: results, timestr: timestring, current_user: req.params.user});
 		}
 	);
 });
@@ -121,6 +121,45 @@ app.post('/change/state_now/:user/:id', (req, res) => {
 	console.log(req.params.user);	
 	connection.query(
 		'update attendance set state_now=? where user=?;',
+		[req.params.id, req.params.user],
+		(error, results) => {
+			// console.log(results);
+			res.redirect('/user/'+req.params.user);
+		}
+	);
+});
+app.post('/change/temperature/:user/:id', (req, res) => {
+	console.log('change');	
+	console.log(req.params.id);	
+	console.log(req.params.user);	
+	connection.query(
+		'update attendance set temperature=? where user=?;',
+		[req.params.id, req.params.user],
+		(error, results) => {
+			// console.log(results);
+			res.redirect('/user/'+req.params.user);
+		}
+	);
+});
+app.post('/change/humidity/:user/:id', (req, res) => {
+	console.log('change');	
+	console.log(req.params.id);	
+	console.log(req.params.user);	
+	connection.query(
+		'update attendance set humidity=? where user=?;',
+		[req.params.id, req.params.user],
+		(error, results) => {
+			// console.log(results);
+			res.redirect('/user/'+req.params.user);
+		}
+	);
+});
+app.post('/change/ac_mode/:user/:id', (req, res) => {
+	console.log('change');	
+	console.log(req.params.id);	
+	console.log(req.params.user);	
+	connection.query(
+		'update attendance set ac_mode=? where user=?;',
 		[req.params.id, req.params.user],
 		(error, results) => {
 			// console.log(results);
