@@ -63,7 +63,7 @@
                             </div>
                             <div class="self">
                                 <div class="self-describe">
-                                    出社状況
+                                    <%= timestr %>の出社状況
                                 </div>
                                 <form action="/change/<%= cols[0] %>/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
                                     <!-- <input type="submit" value="<%= names[item.state_work] %>" 
