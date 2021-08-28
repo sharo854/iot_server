@@ -65,6 +65,7 @@ ul, li {
 
 .contents-end {
 	border-bottom: 1px solid #666666;
+	padding: 10px;
 }
 .self-describe {
 	display: table-cell;
