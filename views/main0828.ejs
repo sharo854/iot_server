@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>IoT管理</title>
+		<link rel="stylesheet" href="/css/style0828.css">
+		<link rel="stylesheet" href="responsive.css">
+	</head>
+	<body>
+		<header>
+			<a href="/user/<%= current_user %>" class="header-logo">IoT管理画面</a>
+		</header>
+		<% var names = ["不明", "出社", "在宅", "休暇"]; %>
+		<% var people = {tei:"てい", ueno:"上野", meguro:"目黒"};%>
+        <% var names_now = ["退席中", "連絡可"]; %>
+		<% var color_class = ["button-unknown", "button-office", "button-home", "button-vac"]; %>
+		<% var color_class_now = ["button-out", "button-room", "button-mid", "button-outside", "button-sleep"]; %>
+        
+		<div class="state-wrapper">
+			<div class="container">
+				<div class="col-describe">
+					<p><%= timestr %></p>
+                    <table border="1">
+                        <tr>
+                            <td>現在の状態</td>
+                            <td>6:30～8:45</td>
+                        </tr>
+                        <tr>
+                            <td><%= timestr %>の出社状況</td>
+                            <td>ｓｓ</td>
+                        </tr>
+                    </table>
+				</div>
+				
+				<ul>
+					<!-- <% var newitems = new Array() %>
+					<% items.forEach((item, index) => { %>
+						<% if(items[index].user == current_user) { 
+							items.unshift = items[index]
+						 }else { 
+							items.push = items[index]
+						 } %>
+					<% }); %> -->
+
+					<% items.forEach((item, index) => { %>
+						<% 
+						var nextstate_now = item.state_now+1;
+						if(nextstate_now>1) {
+							nextstate_now = 0;
+						}
+						var nextstate = item.state_work+1;
+						if(nextstate>3) {
+							nextstate = 0;
+						}
+						%>
+						<li>
+							<span><%= people[item.user] %></span>
+							<form action="/change/<%= cols[1] %>/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
+								<input type="hidden" name="user_name1" value="名前">
+								<a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_now[item.state_now] %>
+									<% if(current_user!=='root') { %>
+										button-dis
+									<% } %>"><%= names_now[item.state_now] %></a>
+							</form>
+							<form action="/change/<%= cols[0] %>/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
+								<!-- <input type="submit" value="<%= names[item.state_work] %>" 
+												class="button <%= color_class[item.state_work] %> "/> -->
+								<input type="hidden" name="user_name" value="名前">
+								<a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work] %> 
+									<% if(current_user!=='root'&&current_user!==item.user) { %>
+										button-dis
+									<% } %>">
+									<%= names[item.state_work] %></a>
+							</form>
+							<!-- <% if(current_user!=='root'&&current_user!==item.user) { %>
+								操作不可
+							<% } %> -->
+						</li>
+					<% }); %>
+				</ul>
+				<p>平日18:00リセット</p>
+				<!-- <input type="range" name="brightness" min="0" max="100"> -->
+			</div>
+		</div>
+	</body>
+</html>

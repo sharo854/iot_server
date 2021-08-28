@@ -1,0 +1,116 @@
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: #66431b;
+}
+
+html {
+	font-size: 15pt;
+	font-family: 'Hiragino Sans', sans-serif;
+	line-height: 1.7;
+	letter-spacing: 1px;
+}
+
+body {
+	margin: 0;
+	background-color: #f6faff;
+	color: #6c7686;
+}
+
+header {
+	/* height: 56px; */
+	padding: 15px;
+	background-color: #7bc6e4;
+	/* border-bottom: 1px solid #2473d3; */
+}
+
+.header-logo {
+	padding: 5px;
+}
+
+ul, li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+
+/* .state-wrapper {
+
+} */
+
+.container {
+	width: 1200px;
+	padding: 15px 25px;
+	margin: 0 auto;
+}
+.col-describe {
+	/* margin-left: 60px; */
+	margin-left: 185px;
+}
+
+.inline-block {
+	display       : inline-block;
+}
+.button {
+	display       : inline-block;
+	border-radius : 7%;          /* 角丸       */
+	font-weight	:bold;
+	text-align    : center;      /* 文字位置   */
+	cursor        : pointer;     /* カーソル   */
+	padding-top       : 15px;   /* 余白       */
+	padding-bottom       : 15px;   /* 余白       */
+	width: 110px;
+	/* background    : #000066;     背景色     */
+	color         : #ffffff;     /* 文字色     */
+	line-height   : 1em;         /* 1行の高さ  */
+	box-shadow    : 8px 8px 20px #666666;  /* 影の設定 */
+	border        : 2px solid #000000;    /* 枠の指定 */
+	margin		: 3pt 6pt;
+}
+.button:hover {
+transition    : .3s;         /* なめらか変化 */
+box-shadow    : none;        /* カーソル時の影消去 */
+color         : #123044;     /* 文字色     */
+background    : #ffffff;     /* 背景色    */
+}
+.button-dis {
+	pointer-events:none;
+	box-shadow    : none;        /* 影消去 */
+	opacity:0.7;
+}
+.button-unknown {
+	background    : #7c7c7c;     /* 背景色     */
+}
+.button-office {
+	background    : #da9377;     /* 背景色     */
+}
+.button-home {
+	background    : #7cc793;     /* 背景色     */
+}
+.button-vac {
+	background    : #b87c0d;     /* 背景色     */
+}
+.button-room {
+	background    : #639fa3;     /* 背景色     */
+}
+.button-meal {
+	background    : #da1b1b;     /* 背景色     */
+}
+.button-out {
+	background    : #d3ae5e;     /* 背景色     */
+}
+.button-outside {
+	background    : #9cca51;     /* 背景色     */
+}
+.button-sleep {
+	background    : #302552;     /* 背景色     */
+}
+
+li {
+	padding	: 10px 0;
+	height: 100px;
+}
