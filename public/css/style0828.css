@@ -64,6 +64,7 @@ ul, li {
 .self-describe {
 	display       : inline-block;
 	width: 180px;
+	text-align: center;
 }
 .self-contents {
 	display       : inline-block;
