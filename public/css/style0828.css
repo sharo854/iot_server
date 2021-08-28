@@ -56,7 +56,12 @@ ul, li {
 	width: 100%;
 }
 .self-describe {
-	width: 50%;
+	display       : inline-block;
+	width: 100px;
+}
+.self-contents {
+	display       : inline-block;
+	width: 100px;
 }
 
 .inline-block {
