@@ -46,7 +46,7 @@ void loop() {
     USE_SERIAL.print("[HTTP] begin...\n");
     // configure traged server and url
     //http.begin("https://www.howsmyssl.com/a/check", ca); //HTTPS
-    http.begin("http://164.70.117.162:3002/api/v1/ac_state/tei"); //HTTP
+    http.begin("http://164.70.117.162:3002/api/v1/ac_state/"+user); //HTTP
     
     USE_SERIAL.print("[HTTP] GET...\n");
     int httpCode = http.GET();
