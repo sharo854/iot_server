@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>IoT管理</title>
+		<link rel="stylesheet" href="/css/style0828.css">
+		<link rel="stylesheet" href="responsive.css">
+	</head>
+	<body>
+		<% var names = ["不明", "出社", "在宅", "休暇"]; %>
+		<% var people = {tei:"てい", ueno:"上野", meguro:"目黒"};%>
+        <% var names_now = ["退席中", "連絡可"]; %>
+        <% var names_ac_mode = ["冷房", "除湿", "暖房"]; %>
+        <% var cols = ["state_work", "state_now", "ac_mode"]; %>
+		<% var color_class = ["button-unknown", "button-office", "button-home", "button-vac"]; %>
+		<% var color_class_now = ["button-out", "button-room", "button-mid", "button-outside", "button-sleep"]; %>
+		<% var color_class_ac = ["button-cooling", "button-dry", "button-cooling"]; %>
+        
+		<header>
+			<a href="/user/<%= current_user %>" class="header-logo">IoT管理画面</a>
+            <div class="user">
+                ユーザ：<%= people[current_user] %>
+            </div>
+		</header>
+		<div class="state-wrapper">
+			<div class="container">
+                <div class="contents-end">
+                    <% items.forEach((item, index) => {
+                        if(item.user==current_user) { %>
+                            <% 
+                            var nextstate_now = item.state_now+1;
+                            if(nextstate_now>1) {
+                                nextstate_now = 0;
+                            }
+                            var nextstate = item.state_work+1;
+                            if(nextstate>3) {
+                                nextstate = 0;
+                            }
+                            %>
+                            <div class="self">
+                                <div class="self-describe">
+                                    現在の状態
+                                </div>
+                                <form action="/change/<%= cols[1] %>/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
+                                    <input type="hidden" name="user_name1" value="名前">
+                                    <a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_now[item.state_now] %>
+                                        <% if(current_user!=='root') { %>
+                                            button-dis
+                                        <% } %>"><%= names_now[item.state_now] %></a>
+                                </form>
+                            </div>
+                            <div class="self">
+                                <div class="self-describe">
+                                    <%= timestr %>
+                                </div>
+                                <form action="/change/<%= cols[0] %>/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
+                                    <!-- <input type="submit" value="<%= names[item.state_work] %>" 
+                                                    class="button <%= color_class[item.state_work] %> "/> -->
+                                    <input type="hidden" name="user_name" value="名前">
+                                    <a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work] %> 
+                                        <% if(current_user!=='root'&&current_user!==item.user) { %>
+                                            button-dis
+                                        <% } %>">
+                                        <%= names[item.state_work] %></a>
+                                </form>
+                            </div>
+
+                            <!-- <div class="self-contents <%= color_class_now[item.state_now] %>">
+                                <%= names_now[item.state_now] %>
+                            </div> -->
+                        <% }
+                    }); %>
+                </div>
+				
+                <!-- <div class="contents-end">
+                    <% items.forEach((item, index) => {
+                        if(item.user==current_user) { 
+                            if (item.temperature === null) { %>
+                                温度・湿度情報を取得できません
+                            <% }else { %>
+                                室温：<%= item.temperature.toFixed(1) %>℃   
+                                湿度：<%= item.humidity.toFixed(0) %>%
+                            <% }
+                         }
+                    }); %>
+                </div> -->
+                <!-- <div class="contents-end">
+                    <% items.forEach((item, index) => {
+                        if(item.user==current_user) { 
+                            var ac_mode_ = 0;
+                            if (item.ac_mode !=== null) {
+                                ac_mode_ = item.ac_mode;
+                            }
+                            var next_ac_mode = ac_mode_+1;
+                            if(next_ac_mode>2) {
+                                next_ac_mode = 0;
+                            }
+                        } %>
+                        <form action="/change/<%= cols[2] %>/<%= item.user %>/<%= next_ac_mode %>" method="post" name="form2" class="inline-block">
+                            <input type="hidden" name="user_name1" value="名前">
+                            <a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_ac[ac_mode_] %>
+                                <% if(current_user!=='root') { %>
+                                    button-dis
+                                <% } %>"><%= names_ac_mode[ac_mode_] %></a>
+                        </form>
+                    <% }); %>
+                </div> -->
+
+
+				<div class="contents-end">
+					<!-- <% var newitems = new Array() %>
+					<% items.forEach((item, index) => { %>
+						<% if(items[index].user == current_user) { 
+							items.unshift = items[index]
+						 }else { 
+							items.push = items[index]
+						 } %>
+					<% }); %> -->
+
+					<% items.forEach((item, index) => { %>
+                        <% if(item.user!==current_user) { %>
+                            <% 
+                            var nextstate_now = item.state_now+1;
+                            if(nextstate_now>1) {
+                                nextstate_now = 0;
+                            }
+                            var nextstate = item.state_work+1;
+                            if(nextstate>3) {
+                                nextstate = 0;
+                            } %>
+
+                            <div class="self">
+                                <div class="other-describe">
+                                    <%= people[item.user] %>
+                                </div>
+                                <form action="/change/<%= cols[1] %>/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
+                                    <input type="hidden" name="user_name1" value="名前">
+                                    <a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_now[item.state_now] %>
+                                        <% if(current_user!=='root') { %>
+                                            button-dis
+                                        <% } %>"><%= names_now[item.state_now] %></a>
+                                </form>
+                                <form action="/change/<%= cols[0] %>/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
+                                    <!-- <input type="submit" value="<%= names[item.state_work] %>" 
+                                                    class="button <%= color_class[item.state_work] %> "/> -->
+                                    <input type="hidden" name="user_name" value="名前">
+                                    <a href="javascript:form1[<%= index %>].submit()" class="button <%= color_class[item.state_work] %> 
+                                        <% if(current_user!=='root'&&current_user!==item.user) { %>
+                                            button-dis
+                                        <% } %>">
+                                        <%= names[item.state_work] %></a>
+                                </form>
+                                <!-- <% if(current_user!=='root'&&current_user!==item.user) { %>
+                                    操作不可
+                                <% } %> -->
+                            </div>
+                        <% } %>
+					<% }); %>
+				    平日18:00リセット
+                </div>
+				<!-- <input type="range" name="brightness" min="0" max="100"> -->
+			</div>
+		</div>
+	</body>
+</html>
