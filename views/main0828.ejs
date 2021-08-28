@@ -40,13 +40,13 @@
                     <div class="self-describe">
                         現在の状態
                     </div>
-                        <% items.forEach((item, index) => {
-                            if(item.user==current_user) { %>
+                    <% items.forEach((item, index) => {
+                        if(item.user==current_user) { %>
+                            <div class="self-contents <%= color_class_now[item.state_now] %>">
                                 <%= names_now[item.state_now] %>
-                            <% }
-                        }); %>
-                    <!-- <div class="self-contents <%= color_class_now[current_user.state_now] %>">
-                    </div> -->
+                            </div>
+                        <% }
+                    }); %>
                 </div>
 				
 				<ul>
