@@ -93,8 +93,8 @@ ul, li {
 	font-weight	:bold;
 	text-align    : center;      /* 文字位置   */
 	cursor        : pointer;     /* カーソル   */
-	padding-top       : 15px;   /* 余白       */
-	padding-bottom       : 15px;   /* 余白       */
+	padding-top       : 10px;   /* 余白       */
+	padding-bottom       : 10px;   /* 余白       */
 	width: 110px;
 	/* background    : #000066;     背景色     */
 	color         : #ffffff;     /* 文字色     */
