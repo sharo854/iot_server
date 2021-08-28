@@ -167,6 +167,19 @@ app.post('/change/ac_mode/:user/:id', (req, res) => {
 		}
 	);
 });
+app.post('/change/ac_state/:user/:id', (req, res) => {
+	console.log('change');	
+	console.log(req.params.id);	
+	console.log(req.params.user);	
+	connection.query(
+		'update attendance set ac_state=? where user=?;',
+		[req.params.id, req.params.user],
+		(error, results) => {
+			// console.log(results);
+			res.redirect('/user/'+req.params.user);
+		}
+	);
+});
 
 app.get('/api/v1/test', (req, res) => {
 	console.log('test');
@@ -182,6 +195,17 @@ app.get('/api/v1/state', (req, res) => {
 		(error, results) => {
 			console.log(results);
 			res.render('stateapi.ejs', {item: results[0]});
+		}
+	);
+});
+app.get('/api/v1/ac_state/:user', (req, res) => {
+	console.log('api/ac_state');	
+	connection.query(
+		'SELECT ac_state FROM attendance where user=?',
+		[req.params.user], 
+		(error, results) => {
+			console.log(results);
+			res.render('ac_state_api.ejs', {item: results[0]});
 		}
 	);
 });

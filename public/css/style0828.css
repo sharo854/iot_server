@@ -123,6 +123,12 @@ background    : #ffffff;     /* 背景色    */
 .button-heating {
 	background    : #ff7f50;     /* 背景色     */
 }
+.button-on {
+	background    : #ff7f50;     /* 背景色     */
+}
+.button-off {
+	background    : #ff7f50;     /* 背景色     */
+}
 
 .button-unknown {
 	background    : #7c7c7c;     /* 背景色     */
