@@ -69,6 +69,12 @@ ul, li {
 	/* text-align: center; */
 	vertical-align: middle;
 }
+.other-describe {
+	display: table-cell;
+	width: 60px;
+	/* text-align: center; */
+	vertical-align: middle;
+}
 .self-contents {
 	display       : inline-block;
 	width: 100px;
