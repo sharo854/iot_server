@@ -42,7 +42,16 @@
                     </div>
                     <% items.forEach((item, index) => {
                         if(item.user==current_user) { %>
-                            
+                            <% 
+                            var nextstate_now = item.state_now+1;
+                            if(nextstate_now>1) {
+                                nextstate_now = 0;
+                            }
+                            var nextstate = item.state_work+1;
+                            if(nextstate>3) {
+                                nextstate = 0;
+                            }
+                            %>
 							<form action="/change/<%= cols[1] %>/<%= item.user %>/<%= nextstate_now %>" method="post" name="form2" class="inline-block">
 								<input type="hidden" name="user_name1" value="名前">
 								<a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_now[item.state_now] %>
