@@ -44,7 +44,7 @@
                                 </div>
                                 <form action="/change/<%= cols[1] %>/<%= item.user %>/<%= nextstate_now %>" method="post" name="form1" class="inline-block">
                                     <input type="hidden" name="user_name" value="名前">
-                                    <a href="javascript:form1[0].submit()" class="button <%= color_class_now[item.state_now] %>
+                                    <a href="javascript:form1.submit()" class="button <%= color_class_now[item.state_now] %>
                                         <% if(current_user!=='root') { %>
                                             button-dis
                                         <% } %>"><%= names_now[item.state_now] %></a>
@@ -58,7 +58,7 @@
                                     <!-- <input type="submit" value="<%= names[item.state_work] %>" 
                                                     class="button <%= color_class[item.state_work] %> "/> -->
                                     <input type="hidden" name="user_name" value="名前">
-                                    <a href="javascript:form2[0].submit()" class="button <%= color_class[item.state_work] %> 
+                                    <a href="javascript:form2.submit()" class="button <%= color_class[item.state_work] %> 
                                         <% if(current_user!=='root'&&current_user!==item.user) { %>
                                             button-dis
                                         <% } %>">
@@ -99,7 +99,7 @@
                             }%>
                             <form action="/change/<%= cols[2] %>/<%= item.user %>/<%= next_ac_mode %>" method="post" name="form3" class="inline-block">
                                 <input type="hidden" name="user_name" value="名前">
-                                <a href="javascript:form3[0].submit()" class="button <%= color_class_ac[ac_mode_] %>
+                                <a href="javascript:form3.submit()" class="button <%= color_class_ac[ac_mode_] %>
                                     <% if(current_user!=='root'&&current_user!==item.user) { %>
                                         button-dis
                                     <% } %>"><%= names_ac_mode[ac_mode_] %></a>
