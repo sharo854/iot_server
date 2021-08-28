@@ -65,7 +65,7 @@ ul, li {
 }
 .self-describe {
 	display: table-cell;
-	width: 230px;
+	width: 180px;
 	/* text-align: center; */
 	vertical-align: middle;
 }

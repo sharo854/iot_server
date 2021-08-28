@@ -63,7 +63,7 @@
                             </div>
                             <div class="self">
                                 <div class="self-describe">
-                                    <%= timestr %>の出社状況
+                                    <%= timestr %>
                                 </div>
                                 <form action="/change/<%= cols[0] %>/<%= item.user %>/<%= nextstate %>" method="post" name="form1" class="inline-block">
                                     <!-- <input type="submit" value="<%= names[item.state_work] %>" 
@@ -95,6 +95,9 @@
 					<% }); %> -->
 
 					<% items.forEach((item, index) => { %>
+                        <% if(item.user==current_user) { 
+                            continue;
+                        } %>
 						<% 
 						var nextstate_now = item.state_now+1;
 						if(nextstate_now>1) {
