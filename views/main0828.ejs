@@ -11,9 +11,11 @@
 		<% var names = ["不明", "出社", "在宅", "休暇"]; %>
 		<% var people = {tei:"てい", ueno:"上野", meguro:"目黒"};%>
         <% var names_now = ["退席中", "連絡可"]; %>
-        <% var cols = ["state_work", "state_now"]; %>
+        <% var names_ac_mode = ["冷房", "除湿", "暖房"]; %>
+        <% var cols = ["state_work", "state_now", "ac_mode"]; %>
 		<% var color_class = ["button-unknown", "button-office", "button-home", "button-vac"]; %>
 		<% var color_class_now = ["button-out", "button-room", "button-mid", "button-outside", "button-sleep"]; %>
+		<% var color_class_ac = ["button-cooling", "button-dry", "button-cooling"]; %>
         
 		<header>
 			<a href="/user/<%= current_user %>" class="header-logo">IoT管理画面</a>
@@ -96,6 +98,28 @@
                          }
                     }); %>
                 </div>
+                <div class="contents-end">
+                    <% items.forEach((item, index) => {
+                        if(item.user==current_user) { 
+                            var ac_mode_ = 0;
+                            if (item.ac_mode !=== null) {
+                                ac_mode_ = item.ac_mode;
+                            }
+                            var next_ac_mode = ac_mode_+1;
+                            if(next_ac_mode>2) {
+                                next_ac_mode = 0;
+                            }
+                        } %>
+                        <form action="/change/<%= cols[2] %>/<%= item.user %>/<%= next_ac_mode %>" method="post" name="form2" class="inline-block">
+                            <input type="hidden" name="user_name1" value="名前">
+                            <a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_ac[ac_mode_] %>
+                                <% if(current_user!=='root') { %>
+                                    button-dis
+                                <% } %>"><%= names_ac_mode[ac_mode_] %></a>
+                        </form>
+                    }); %>
+                </div>
+
 
 				<div class="contents-end">
 					<!-- <% var newitems = new Array() %>
