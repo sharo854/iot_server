@@ -59,7 +59,7 @@ ul, li {
 }
 
 .self {
-	width: 100%;
+	display: flex;
 }
 .self-describe {
 	display       : inline-block;
