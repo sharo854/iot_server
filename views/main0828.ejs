@@ -98,13 +98,13 @@
                                 next_ac_mode = 0;
                             }
                         } %>
-                        <!-- <form action="/change/<%= cols[2] %>/<%= item.user %>/<%= next_ac_mode %>" method="post" name="form2" class="inline-block">
+                        <form action="/change/<%= cols[2] %>/<%= item.user %>/<%= next_ac_mode %>" method="post" name="form2" class="inline-block">
                             <input type="hidden" name="user_name1" value="名前">
                             <a href="javascript:form2[<%= index %>].submit()" class="button <%= color_class_ac[ac_mode_] %>
                                 <% if(current_user!=='root') { %>
                                     button-dis
                                 <% } %>"><%= names_ac_mode[ac_mode_] %></a>
-                        </form> -->
+                        </form>
                     <% }); %>
                 </div>
 
