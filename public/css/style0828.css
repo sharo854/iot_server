@@ -60,10 +60,12 @@ ul, li {
 
 .self {
 	display: flex;
+	padding-bottom: 5px;
+	border-bottom: #666666, 1px;
 }
 .self-describe {
 	display: table-cell;
-	width: 180px;
+	/* width: 180px; */
 	/* text-align: center; */
 	vertical-align: middle;
 }
