@@ -52,6 +52,13 @@ ul, li {
 	margin-left: 185px;
 }
 
+.self {
+	width: 100%;
+}
+.self-describe {
+	width: 50%;
+}
+
 .inline-block {
 	display       : inline-block;
 }
