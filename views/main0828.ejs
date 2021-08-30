@@ -144,7 +144,7 @@
                                         button-dis
                                     <% } %>"><%= names_lt_state[lt_state_] %></a>
                             </form>
-                            <%= Date.parse(item.last_update.replace(/-/g, '/')).getTime() %>
+                            <%= item.last_update.replace(/-/g, '/') %>
                         <%} %>
                     <% }); %>
 
