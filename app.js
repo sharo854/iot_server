@@ -222,6 +222,17 @@ app.get('/api/v1/ac_state/:user', (req, res) => {
 		}
 	);
 });
+app.get('/api/v1/light_state/:user', (req, res) => {
+	console.log('api/light_state');	
+	connection.query(
+		'SELECT light_state FROM attendance where user=?',
+		[req.params.user], 
+		(error, results) => {
+			console.log(results);
+			res.render('light_state_api.ejs', {item: results[0]});
+		}
+	);
+});
 
 var server = app.listen(3002, () => {
 	console.log('Example app listening on port ' + server.address().port)
