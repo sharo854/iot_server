@@ -13,11 +13,13 @@
         <% var names_now = ["退席中", "連絡可"]; %>
         <% var names_ac_mode = ["冷房", "除湿", "暖房"]; %>
         <% var names_ac_state = ["OFF", "ON"]; %>
-        <% var cols = ["state_work", "state_now", "ac_mode", "ac_state"]; %>
+        <% var names_lt_state = ["OFF", "ON"]; %>
+        <% var cols = ["state_work", "state_now", "ac_mode", "ac_state", "light_state"]; %>
 		<% var color_class = ["button-unknown", "button-office", "button-home", "button-vac"]; %>
 		<% var color_class_now = ["button-out", "button-room", "button-mid", "button-outside", "button-sleep"]; %>
 		<% var color_class_ac = ["button-cooling", "button-dry", "button-heating"]; %>
 		<% var color_class_ac_state = ["button-off", "button-on"]; %>
+		<% var color_class_lt_state = ["button-off", "button-on"]; %>
         
 		<header>
 			<a href="/user/<%= current_user %>" class="header-logo">IoT管理画面</a>
@@ -120,6 +122,27 @@
                                     <% if(current_user!=='root'&&current_user!==item.user) { %>
                                         button-dis
                                     <% } %>"><%= names_ac_state[ac_state_] %></a>
+                            </form>
+                        <%} %>
+                    <% }); %>
+                </div>
+                <div class="contents-end">
+                    <% items.forEach((item, index) => {
+                        if(item.user==current_user) { 
+                            var lt_state_ = 0;
+                            if (item.lt_state !== null) {
+                                lt_state_ = item.lt_state;
+                            }
+                            var next_lt_state = lt_state_+1;
+                            if(next_lt_state>1) {
+                                next_lt_state = 0;
+                            }%>
+                            <form action="/change/<%= cols[4] %>/<%= item.user %>/<%= next_lt_state %>" method="post" name="form7" class="inline-block">
+                                <input type="hidden" name="user_name" value="名前">
+                                <a href="javascript:form7.submit()" class="button <%= color_class_lt_state[lt_state_] %>
+                                    <% if(current_user!=='root'&&current_user!==item.user) { %>
+                                        button-dis
+                                    <% } %>"><%= names_lt_state[lt_state_] %></a>
                             </form>
                         <%} %>
                     <% }); %>
