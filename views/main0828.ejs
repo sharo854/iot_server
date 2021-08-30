@@ -130,8 +130,8 @@
                     <% items.forEach((item, index) => {
                         if(item.user==current_user) { 
                             var lt_state_ = 0;
-                            if (item.lt_state !== null) {
-                                lt_state_ = item.lt_state;
+                            if (item.light_state !== null) {
+                                lt_state_ = item.light_state;
                             }
                             var next_lt_state = lt_state_+1;
                             if(next_lt_state>1) {
