@@ -85,7 +85,7 @@ app.get('/user/:user', (req, res) => {
 	console.log(timestring);
 
 	connection.query(
-		'SELECT * FROM attendance',
+		'SELECT * FROM attendance;',
 		(error, results) => {
 			console.log(results);
 			res.render('main0828.ejs', {items: results, timestr: timestring, current_user: req.params.user});
